@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="AJAX," />
+  <meta name="keywords" content="设计模式," />
 
 
 
@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="对于fetch只是简单的看了一下，具体研究等用到了再来分享">
-<meta name="keywords" content="AJAX">
+<meta name="description" content="发布订阅模式广泛应用在js领域。包括jquery中的on,off,once，trigger方法；还有nodeJs中Events模块中；还有vuex中，都有发布订阅模式的应用。所以，也有必要学习一下相关的原理。  代码实现思路 首先我们肯定需要一个容器来存放对应的事件（发布），以及（订阅）对应事件的函数。用一个对象来存放队对应的映射。  我们需要一个on方法，off方法，emit方法和once方">
+<meta name="keywords" content="设计模式">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fetch">
-<meta property="og:url" content="http://yoursite.com/2016/06/05/Fetch/index.html">
+<meta property="og:title" content="ES6中的类">
+<meta property="og:url" content="http://yoursite.com/2018/03/11/对发布订阅模式的理解/index.html">
 <meta property="og:site_name" content="樊文烈的博客">
-<meta property="og:description" content="对于fetch只是简单的看了一下，具体研究等用到了再来分享">
+<meta property="og:description" content="发布订阅模式广泛应用在js领域。包括jquery中的on,off,once，trigger方法；还有nodeJs中Events模块中；还有vuex中，都有发布订阅模式的应用。所以，也有必要学习一下相关的原理。  代码实现思路 首先我们肯定需要一个容器来存放对应的事件（发布），以及（订阅）对应事件的函数。用一个对象来存放队对应的映射。  我们需要一个on方法，off方法，emit方法和once方">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-29T09:16:47.000Z">
+<meta property="og:updated_time" content="2018-03-14T06:13:53.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fetch">
-<meta name="twitter:description" content="对于fetch只是简单的看了一下，具体研究等用到了再来分享">
+<meta name="twitter:title" content="ES6中的类">
+<meta name="twitter:description" content="发布订阅模式广泛应用在js领域。包括jquery中的on,off,once，trigger方法；还有nodeJs中Events模块中；还有vuex中，都有发布订阅模式的应用。所以，也有必要学习一下相关的原理。  代码实现思路 首先我们肯定需要一个容器来存放对应的事件（发布），以及（订阅）对应事件的函数。用一个对象来存放队对应的映射。  我们需要一个on方法，off方法，emit方法和once方">
 
 
 
@@ -112,10 +112,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/05/Fetch/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/11/对发布订阅模式的理解/"/>
 
 
-  <title> Fetch | 樊文烈的博客 </title>
+  <title> ES6中的类 | 樊文烈的博客 </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -245,7 +245,7 @@
             
             
               
-                Fetch
+                ES6中的类
               
             
           </h1>
@@ -257,8 +257,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-06-05T20:12:36+08:00" content="2016-06-05">
-              2016-06-05
+            <time itemprop="dateCreated" datetime="2018-03-11T15:30:01+08:00" content="2018-03-11">
+              2018-03-11
             </time>
           </span>
 
@@ -271,8 +271,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/AJAX/" itemprop="url" rel="index">
-                    <span itemprop="name">AJAX</span>
+                  <a href="/categories/设计模式/" itemprop="url" rel="index">
+                    <span itemprop="name">设计模式</span>
                   </a>
                 </span>
 
@@ -305,19 +305,27 @@
 
       
         <blockquote>
-<p>对于fetch只是简单的看了一下，具体研究等用到了再来分享</p>
+<p>发布订阅模式广泛应用在js领域。包括jquery中的on,off,once，trigger方法；还有nodeJs中Events模块中；还有vuex中，都有发布订阅模式的应用。所以，也有必要学习一下相关的原理。</p>
 </blockquote>
-<a id="more"></a>
-<h4 id="1-Fetch介绍"><a href="#1-Fetch介绍" class="headerlink" title="1. Fetch介绍"></a>1. Fetch介绍</h4><p>Fetch API提供了一个fetch()方法，它被定义在BOM的window对象中，你可以用它来发起对远程资源的请求。 该方法返回的是一个Promise对象，让你能够对请求的返回结果进行检索。<br><!-- more --><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//创建一个简单请求</div><div class="line">//第一个参数url，第二个是配置对象，比如请求方式等  cache是指定缓存还是不缓存响应结果</div><div class="line">var req = new Request(&apos;http://localhost:8000/fetch&apos;, &#123;method: &apos;get&apos;,cache:&apos;reload&apos;&#125;);</div><div class="line">fetch(req).then(function (response) &#123;</div><div class="line">        response.json().then(function (result)&#123;</div><div class="line">            console.log(result);</div><div class="line">        &#125;);</div><div class="line">&#125;).catch(function (err) &#123;</div><div class="line">        console.log(err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>上面代码请求成功返回一个Response对象，可以<code>console.log(response)</code>看看具体信息。</p>
-<h5 id="1-1-Body参数"><a href="#1-1-Body参数" class="headerlink" title="1.1 Body参数"></a>1.1 Body参数</h5><p>因为在 Request 和 Response 中都包含 Body 的实现，所以包含以下类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ArrayBuffer</div><div class="line">ArrayBufferView (Uint8Array and friends)</div><div class="line">Blob/File  Blob是二进制大对象</div><div class="line">string</div><div class="line">URLSearchParams</div><div class="line">FormData</div></pre></td></tr></table></figure>
-<p>在 fetch 中实现了对应的方法，并返回的都是 Promise 类型。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">arrayBuffer()</div><div class="line">blob()</div><div class="line">json()</div><div class="line">text()</div><div class="line">formData()</div></pre></td></tr></table></figure>
-<p>这样处理返回的数据类型就会变的特别地方便，如处理 json 格式的数据。</p>
-<h5 id="1-2-请求头headers"><a href="#1-2-请求头headers" class="headerlink" title="1.2 请求头headers"></a>1.2 请求头headers</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<p><a href="http://www.tuicool.com/articles/M7NRr27" target="_blank" rel="external">Fetch参考文档</a></p>
-
+<h5 id="代码实现思路"><a href="#代码实现思路" class="headerlink" title="代码实现思路"></a>代码实现思路</h5><ul>
+<li><p>首先我们肯定需要一个容器来存放对应的事件（发布），以及（订阅）对应事件的函数。用一个对象来存放队对应的映射。</p>
+</li>
+<li><p>我们需要一个on方法，off方法，emit方法和once方法。大概就是这几个。这是最简单的，可能我们还需要往某事件追加监听函数，或者删除某事件下所有的监听函数（这个也不难）</p>
+</li>
+<li><p>按照node中EventEmitter来举例：</p>
+<ul>
+<li><p><code>on</code>方法至少有两个参数：事件名称type和监听函数callback。</p>
+</li>
+<li><p><code>emit</code>方法：发射信号，也就是让订阅对应事件的函数队列执行。首先第一个参数肯定是事件名称type，然后发射时会传入0个到多个参数。</p>
+</li>
+<li><p><code>off</code>方法：需要事件名称type和对应的callback。然后在函数队列中删除掉对应的函数</p>
+</li>
+<li><p><code>once</code>方法：跟on方法需要的参数一样。唯一的不同是只执行一次</p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">class Event &#123;</div><div class="line"></div><div class="line">  constructor()&#123;</div><div class="line">    this._event = &#123;&#125; //用一个对象来当容器</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  on(type, callback)&#123;</div><div class="line">    if(!this._event[type]) &#123;</div><div class="line">      this._event[type] = [];</div><div class="line">    &#125;</div><div class="line">    this._event[type].push(callback);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  emit(type, ...params)&#123;</div><div class="line">    if(!this._event[type]) &#123; return; &#125;</div><div class="line"></div><div class="line">    this._event[type].forEach(fn =&gt; &#123;</div><div class="line">      fn.apply(this, params);</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  off(type, callback)&#123;</div><div class="line">    if(!this._event[type]) &#123; return; &#125;</div><div class="line">    this._event[type].filter(fn =&gt; &#123;</div><div class="line">      return item != callback;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  once(type, callback) &#123;</div><div class="line">    const tempFn = () =&gt; &#123;</div><div class="line">      callback.apply(this, arguments);</div><div class="line">      this.off(type, callback);</div><div class="line">    &#125;; </div><div class="line">    this.on(type, tempFn);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">let evt = new Event();</div><div class="line"></div><div class="line">evt.on(&apos;self&apos;, function()&#123;</div><div class="line">  console.log(1)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">evt.once(&apos;self&apos;, function(data)&#123;</div><div class="line">  console.log(2, data)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">setTimeout(function()&#123;</div><div class="line">  evt.emit(&apos;self&apos;, 222)</div><div class="line"></div><div class="line">  evt.emit(&apos;self&apos;, 333)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -339,7 +347,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/AJAX/" rel="tag">#AJAX</a>
+            <a href="/tags/设计模式/" rel="tag">#设计模式</a>
           
         </div>
       
@@ -348,13 +356,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/11/09/iscroll踩坑总结/" rel="next" title="iscroll踩坑总结">
+                <i class="fa fa-chevron-left"></i> iscroll踩坑总结
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/05/Promise对象/" rel="prev" title="Promise对象">
-                Promise对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -468,7 +476,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Fetch介绍"><span class="nav-number">1.</span> <span class="nav-text">1. Fetch介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-1-Body参数"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 Body参数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#1-2-请求头headers"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 请求头headers</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#代码实现思路"><span class="nav-number">1.</span> <span class="nav-text">代码实现思路</span></a></li></ol></div>
             
           </div>
         </section>
