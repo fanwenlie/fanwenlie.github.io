@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="樊文烈的博客">
 <meta property="og:description" content="类 使用class关键字定义一个类 基于这个类创建实例以后会自动执行constructor方法,此方法可以用来初始化 es6中的类是原型继承的语法糖">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-29T09:16:47.000Z">
+<meta property="og:updated_time" content="2018-03-17T10:32:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ES6中的类">
 <meta name="twitter:description" content="类 使用class关键字定义一个类 基于这个类创建实例以后会自动执行constructor方法,此方法可以用来初始化 es6中的类是原型继承的语法糖">
@@ -310,20 +310,20 @@
 <li>es6中的类是原型继承的语法糖</li>
 </ul>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Person &#123;</div><div class="line">    //构造函数，用来初始化私有属性</div><div class="line">    constructor(name)&#123;</div><div class="line">        this.name = name;</div><div class="line">    &#125;</div><div class="line">    //公有方法，相当于在原型上添加方法</div><div class="line">    getName()&#123;</div><div class="line">        console.log(this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</div><div class="line">    <span class="comment">//构造函数，用来初始化私有属性</span></div><div class="line">    <span class="keyword">constructor</span>(name)&#123;</div><div class="line">        <span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//公有方法，相当于在原型上添加方法</span></div><div class="line">    getName()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><ul>
 <li>用extends去继承其他类<ul>
 <li>super关键字：这里表示父类的构造函数，用来新建父类的this对象。</li>
 <li>继承父类私有的和公有的属性和方法</li>
 <li>==子类必须在constructor方法中调用super方法==，否则新建实例时会报错</li>
-<li>在子类的构造函数中，只有调用super之后，才可以使用this关键字，否则会报错<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">class Student extends Person&#123;</div><div class="line">    constructor(name,age)&#123;</div><div class="line">        //console.log(this); //报错</div><div class="line">        super(name);</div><div class="line">        console.log(this);//Student &#123; name: &apos;fwl&apos; &#125;</div><div class="line">        this.age = age;</div><div class="line">    &#125;</div><div class="line">    getAge()&#123;</div><div class="line">        console.log(this.age);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>在子类的构造函数中，只有调用super之后，才可以使用this关键字，否则会报错<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">extends</span> <span class="title">Person</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(name,age)&#123;</div><div class="line">        <span class="comment">//console.log(this); //报错</span></div><div class="line">        <span class="keyword">super</span>(name);</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">//Student &#123; name: 'fwl' &#125;</span></div><div class="line">        <span class="keyword">this</span>.age = age;</div><div class="line">    &#125;</div><div class="line">    getAge()&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.age);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <h4 id="类中set和get"><a href="#类中set和get" class="headerlink" title="类中set和get"></a>类中set和get</h4><pre><code>set：设置属性
 get：获取属性
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">//用set和get模拟document.cookie功能实现</div><div class="line">//set 设置属性  get 获取属性</div><div class="line">class Document &#123;</div><div class="line">    constructor()&#123;</div><div class="line">        this.cookies = [];</div><div class="line">    &#125;</div><div class="line">    //用set关键词为Document类设置属性cookie</div><div class="line">    set cookie(cookie)&#123;</div><div class="line">        //标志 cookie有没有存在</div><div class="line">        let flag = false;</div><div class="line">        this.cookies.map(function (item)&#123;</div><div class="line">            //如果不相等，说明数组cookies没有cookie这个字符串</div><div class="line">            if(cookie.split(&apos;=&apos;)[0] != item.split(&apos;=&apos;)[0])&#123;</div><div class="line">                return item;</div><div class="line">            &#125; else&#123;</div><div class="line">                //如果有，就更新cookie</div><div class="line">                flag = true;</div><div class="line">                return cookie;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        //如过cookie不存在，就push到cookies数组中</div><div class="line">        if(!flag)&#123;</div><div class="line">            this.cookies.push(cookie);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    //获取Document类的cookie属性</div><div class="line">    get cookie()&#123;</div><div class="line">        return this.cookies.join(&apos;; &apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let document = new Document();</div><div class="line">document.cookie = &apos;name=fwl&apos;;</div><div class="line">document.cookie = &apos;age=6&apos;;</div><div class="line">console.log(document.cookie);</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//用set和get模拟document.cookie功能实现</span></div><div class="line"><span class="comment">//set 设置属性  get 获取属性</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Document</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>()&#123;</div><div class="line">        <span class="keyword">this</span>.cookies = [];</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//用set关键词为Document类设置属性cookie</span></div><div class="line">    set cookie(cookie)&#123;</div><div class="line">        <span class="comment">//标志 cookie有没有存在</span></div><div class="line">        <span class="keyword">let</span> flag = <span class="literal">false</span>;</div><div class="line">        <span class="keyword">this</span>.cookies.map(<span class="function"><span class="keyword">function</span> (<span class="params">item</span>)</span>&#123;</div><div class="line">            <span class="comment">//如果不相等，说明数组cookies没有cookie这个字符串</span></div><div class="line">            <span class="keyword">if</span>(cookie.split(<span class="string">'='</span>)[<span class="number">0</span>] != item.split(<span class="string">'='</span>)[<span class="number">0</span>])&#123;</div><div class="line">                <span class="keyword">return</span> item;</div><div class="line">            &#125; <span class="keyword">else</span>&#123;</div><div class="line">                <span class="comment">//如果有，就更新cookie</span></div><div class="line">                flag = <span class="literal">true</span>;</div><div class="line">                <span class="keyword">return</span> cookie;</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">        <span class="comment">//如过cookie不存在，就push到cookies数组中</span></div><div class="line">        <span class="keyword">if</span>(!flag)&#123;</div><div class="line">            <span class="keyword">this</span>.cookies.push(cookie);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//获取Document类的cookie属性</span></div><div class="line">    get cookie()&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.cookies.join(<span class="string">'; '</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">let</span> <span class="built_in">document</span> = <span class="keyword">new</span> Document();</div><div class="line"><span class="built_in">document</span>.cookie = <span class="string">'name=fwl'</span>;</div><div class="line"><span class="built_in">document</span>.cookie = <span class="string">'age=6'</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.cookie);</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -433,7 +433,7 @@ get：获取属性
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -441,7 +441,7 @@ get：获取属性
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -450,7 +450,7 @@ get：获取属性
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

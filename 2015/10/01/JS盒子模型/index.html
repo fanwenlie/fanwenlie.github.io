@@ -1,0 +1,635 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="原生JS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值">
+<meta name="keywords" content="原生JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS盒子模型">
+<meta property="og:url" content="http://yoursite.com/2015/10/01/JS盒子模型/index.html">
+<meta property="og:site_name" content="樊文烈的博客">
+<meta property="og:description" content="JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-17T10:50:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JS盒子模型">
+<meta name="twitter:description" content="JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2015/10/01/JS盒子模型/"/>
+
+
+  <title> JS盒子模型 | 樊文烈的博客 </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">樊文烈的博客</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">⎡To be a better me⎦</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JS盒子模型
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2015-10-01T16:20:01+08:00" content="2015-10-01">
+              2015-10-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/原生JS/" itemprop="url" rel="index">
+                    <span itemprop="name">原生JS</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值"><a href="#一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值" class="headerlink" title="一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值"></a>一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值</h4><pre><code>js当中没有直接获取宽高的属性，例如oDiv.width-&gt;这是有问题的。但是有直接宽高相关的属性：
+console.dir(oDiv2);
+获取的高度跟内容溢出没有关系 也就是说获得的值并不包括溢出的部分
+clientWidth/clientHeight/offsetWidth/offsetHeight 
+</code></pre><h5 id="1-clientWidth-–-gt-内容的宽度-左右padding"><a href="#1-clientWidth-–-gt-内容的宽度-左右padding" class="headerlink" title="1. clientWidth –&gt;内容的宽度+左右padding"></a>1. clientWidth –&gt;内容的宽度+左右padding</h5><h5 id="2-clientHeight-–-gt-内容的高度-上下padding"><a href="#2-clientHeight-–-gt-内容的高度-上下padding" class="headerlink" title="2. clientHeight –&gt;内容的高度+上下padding"></a>2. clientHeight –&gt;内容的高度+上下padding</h5><pre><code>clientLeft：左边框的宽度，clientTop：上边框的高度  （没有直接获取下边框和右边框的属性）
+相当于border[Left/Top]Width
+</code></pre><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(oDiv.clientHeight);--&gt;<span class="number">134</span>  height-&gt;<span class="number">100</span>+上下padding-&gt;<span class="number">34</span>  虽然内容溢出了，但是值并不包括溢出的部分</div><div class="line"><span class="built_in">console</span>.log(oDiv.clientLeft);--&gt;<span class="number">2</span></div></pre></td></tr></table></figure>
+<ul>
+<li>在我们学习的时候，应该学会经常使用console.dir(oDiv),旨在找到元素上的属性和方法，研究属性和方法的意思</li>
+<li><p>拓展：classList属性：获取元素的class属性键值对  这个属性在移动端有用，因为移动端不需要考虑兼容性</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">     oDiv.classList.add(&quot;test100&quot;);</div><div class="line">     console.log(oDiv.classList);</div><div class="line">   ```  </div><div class="line">   </div><div class="line">##### 3. offsetWidth  --&gt;内容的宽度+左右padding+左右的border值</div><div class="line">##### 4. offsetHeight --&gt;内容的高度+上下padding+上下的border值</div><div class="line">       - offsetParent：当前元素的父级参照物  如果包含自己的父元素有定位属性，那么offsetParent就是自己的parentNode；</div><div class="line">       - 如果没有定位属性，会一直向上一层找，如果都没有，最终会找到body</div><div class="line">       - offsetLeft/offsetTop：当前元素的外边框距离父级参照物的内边框的偏移量</div><div class="line">       </div><div class="line">```js</div><div class="line">    console.log(oDiv.offsetLeft);-&gt;8  div距离body的值</div><div class="line">    console.log(oDiv3.offsetParent);-&gt;body</div><div class="line">    console.log(document.body.offsetParent);-&gt;null</div><div class="line">    console.log(oDiv3.offsetLeft);-&gt;30</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>以下两个能获得溢出的内容  也就是真实内容的高度/宽度</p>
+<h5 id="5-scrollWidth-–-gt-约等于-真实内容的宽-左padding值"><a href="#5-scrollWidth-–-gt-约等于-真实内容的宽-左padding值" class="headerlink" title="5. scrollWidth –&gt;约等于 真实内容的宽+左padding值"></a>5. scrollWidth –&gt;约等于 真实内容的宽+左padding值</h5><h5 id="6-scrollHeight-–-gt-约等于-真实内容的高-上padding值"><a href="#6-scrollHeight-–-gt-约等于-真实内容的高-上padding值" class="headerlink" title="6. scrollHeight –&gt;约等于 真实内容的高+上padding值"></a>6. scrollHeight –&gt;约等于 真实内容的高+上padding值</h5><ul>
+<li><p>如果内容没有溢出，则scrollWidth，scrollHeight与clientWidth，clientHeight获取的值一模一样 也就是内容宽高+左右/上下padding</p>
+</li>
+<li><p>另外，我们是否设置overflow=hidden对最终的结果是有影响的；在不同的浏览器中我们获取到的结果也是不相同的</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(oDiv.scrollHeight);-&gt;<span class="number">214</span></div><div class="line">scrollLeft/scrollTop:滚动条卷去的高度/宽度</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(oDiv2.scrollHeight);-&gt;<span class="number">240</span></div></pre></td></tr></table></figure>
+<p>对浏览器的操作：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">1.获得整屏的宽高</div><div class="line">  document.documentElement.clientWidth || document.body.clientWidth</div><div class="line">2.获得整个文档的宽高（真实宽高-&gt;也就是一直滑到网页底部，这一整个高度）</div><div class="line">  document.documentElement.scrollWidth || document.body.scrollHeight</div></pre></td></tr></table></figure>
+<h4 id="二、关于js盒子模型属性取值的问题"><a href="#二、关于js盒子模型属性取值的问题" class="headerlink" title="二、关于js盒子模型属性取值的问题"></a>二、关于js盒子模型属性取值的问题</h4><pre><code>我们通过上面十三个属性获取的结果值永远不可能出现小数，都是整数；浏览器获取结果的时候，在原来真实的结果的基础上进行四舍五入
+</code></pre><h4 id="三、关于操作浏览器本身的盒子模型信息"><a href="#三、关于操作浏览器本身的盒子模型信息" class="headerlink" title="三、关于操作浏览器本身的盒子模型信息"></a>三、关于操作浏览器本身的盒子模型信息</h4><ul>
+<li><p>clientWidth/clientHeight是当前浏览器可视窗口的宽度和高度（一屏幕的宽度和高度）注意理解一屏幕</p>
+</li>
+<li><p>scrollWidth/scrollHeight是当前页面的真实宽度和高度（所有屏加起来的宽度和高度）</p>
+</li>
+<li><p>只要是关于操作浏览器的属性，一般来说，不管哪些属性，不管是什么浏览器，也不管是获取还是设置，想要都兼容的话，都需要些两套：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">获取  document.documentElement.scrollWidth || document.body.scrollHeight （documentElement在前，body在后）</div><div class="line">设置  document.documentElement.scrollTop=0;document.body.scrollLeft=0;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/原生JS/" rel="tag">#原生JS</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/05/Fetch/" rel="prev" title="Fetch">
+                Fetch <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avator.jpg"
+               alt="WenLie Fan" />
+          <p class="site-author-name" itemprop="name">WenLie Fan</p>
+          <p class="site-description motion-element" itemprop="description">前端学习笔记</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值"><span class="nav-number">1.</span> <span class="nav-text">一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-clientWidth-–-gt-内容的宽度-左右padding"><span class="nav-number">1.1.</span> <span class="nav-text">1. clientWidth –>内容的宽度+左右padding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-clientHeight-–-gt-内容的高度-上下padding"><span class="nav-number">1.2.</span> <span class="nav-text">2. clientHeight –>内容的高度+上下padding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-scrollWidth-–-gt-约等于-真实内容的宽-左padding值"><span class="nav-number">1.3.</span> <span class="nav-text">5. scrollWidth –>约等于 真实内容的宽+左padding值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-scrollHeight-–-gt-约等于-真实内容的高-上padding值"><span class="nav-number">1.4.</span> <span class="nav-text">6. scrollHeight –>约等于 真实内容的高+上padding值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、关于js盒子模型属性取值的问题"><span class="nav-number">2.</span> <span class="nav-text">二、关于js盒子模型属性取值的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、关于操作浏览器本身的盒子模型信息"><span class="nav-number">3.</span> <span class="nav-text">三、关于操作浏览器本身的盒子模型信息</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WenLie Fan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  感谢 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

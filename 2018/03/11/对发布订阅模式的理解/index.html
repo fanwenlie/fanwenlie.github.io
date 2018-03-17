@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="樊文烈的博客">
 <meta property="og:description" content="发布订阅模式广泛应用在js领域。包括jquery中的on,off,once，trigger方法；还有nodeJs中Events模块中；还有vuex中，都有发布订阅模式的应用。所以，也有必要学习一下相关的原理。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T01:59:04.000Z">
+<meta property="og:updated_time" content="2018-03-17T10:28:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对发布订阅模式的理解">
 <meta name="twitter:description" content="发布订阅模式广泛应用在js领域。包括jquery中的on,off,once，trigger方法；还有nodeJs中Events模块中；还有vuex中，都有发布订阅模式的应用。所以，也有必要学习一下相关的原理。">
@@ -326,7 +326,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line">class Event &#123;</div><div class="line"></div><div class="line">  constructor()&#123;</div><div class="line">    this._event = &#123;&#125; //用一个对象来当容器</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  on(type, callback)&#123;</div><div class="line">    if(!this._event[type]) &#123;</div><div class="line">      this._event[type] = [];</div><div class="line">    &#125;</div><div class="line">    this._event[type].push(callback);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  emit(type, ...params)&#123;</div><div class="line">    if(!this._event[type]) &#123; return; &#125;</div><div class="line"></div><div class="line">    this._event[type].forEach(fn =&gt; &#123;</div><div class="line">      fn.apply(this, params);</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  off(type, callback)&#123;</div><div class="line">    if(!this._event[type]) &#123; return; &#125;</div><div class="line">    this._event[type].filter(fn =&gt; &#123;</div><div class="line">      return item != callback;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  once(type, callback) &#123;</div><div class="line">    const tempFn = () =&gt; &#123;</div><div class="line">      callback.apply(this, arguments);</div><div class="line">      this.off(type, callback);</div><div class="line">    &#125;; </div><div class="line">    this.on(type, tempFn);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">let evt = new Event();</div><div class="line"></div><div class="line">evt.on(&apos;self&apos;, function()&#123;</div><div class="line">  console.log(1)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">evt.once(&apos;self&apos;, function(data)&#123;</div><div class="line">  console.log(2, data)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">setTimeout(function()&#123;</div><div class="line">  evt.emit(&apos;self&apos;, 222)</div><div class="line"></div><div class="line">  evt.emit(&apos;self&apos;, 333)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>()&#123;</div><div class="line">    <span class="keyword">this</span>._event = &#123;&#125; <span class="comment">//用一个对象来当容器</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  on(type, callback)&#123;</div><div class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>._event[type]) &#123;</div><div class="line">      <span class="keyword">this</span>._event[type] = [];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>._event[type].push(callback);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  emit(type, ...params)&#123;</div><div class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>._event[type]) &#123; <span class="keyword">return</span>; &#125;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>._event[type].forEach(<span class="function"><span class="params">fn</span> =&gt;</span> &#123;</div><div class="line">      fn.apply(<span class="keyword">this</span>, params);</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  off(type, callback)&#123;</div><div class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>._event[type]) &#123; <span class="keyword">return</span>; &#125;</div><div class="line">    <span class="keyword">this</span>._event[type].filter(<span class="function"><span class="params">fn</span> =&gt;</span> &#123;</div><div class="line">      <span class="keyword">return</span> item != callback;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  once(type, callback) &#123;</div><div class="line">    <span class="keyword">const</span> tempFn = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      callback.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">      <span class="keyword">this</span>.off(type, callback);</div><div class="line">    &#125;; </div><div class="line">    <span class="keyword">this</span>.on(type, tempFn);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">let</span> evt = <span class="keyword">new</span> Event();</div><div class="line"></div><div class="line">evt.on(<span class="string">'self'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">evt.once(<span class="string">'self'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>, data)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  evt.emit(<span class="string">'self'</span>, <span class="number">222</span>)</div><div class="line"></div><div class="line">  evt.emit(<span class="string">'self'</span>, <span class="number">333</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
       
     </div>
 
@@ -357,8 +357,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/09/对nodejs的理解/" rel="next" title="对nodejs的理解">
-                <i class="fa fa-chevron-left"></i> 对nodejs的理解
+              <a href="/2016/11/09/iscroll踩坑总结/" rel="next" title="iscroll踩坑总结">
+                <i class="fa fa-chevron-left"></i> iscroll踩坑总结
               </a>
             
           </div>
@@ -431,7 +431,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -439,7 +439,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -448,7 +448,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

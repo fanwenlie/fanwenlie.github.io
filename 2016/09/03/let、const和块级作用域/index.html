@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="樊文烈的博客">
 <meta property="og:description" content="es6新增了新的语法来声明变量，let和const，提供了块级作用域的概念，值得我们学习">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-29T09:16:47.000Z">
+<meta property="og:updated_time" content="2018-03-17T10:34:34.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="let、const和块级作用域">
 <meta name="twitter:description" content="es6新增了新的语法来声明变量，let和const，提供了块级作用域的概念，值得我们学习">
@@ -312,14 +312,14 @@
 <p>es6新增了let和const来声明变量，与var不同的是，let和const不会有变量提升(预解释)的情况出现，也就不会有预解释的诸多问题，这点，我们要区别开来<br>并且，因为没有预解释，变量必须在声明后才能使用</p>
 </blockquote>
 <ul>
-<li>let声明的变量只在当前代码块中有效<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//可以只声明，不赋值</div><div class="line">let a;</div><div class="line">console.log(a);//undefined</div><div class="line"></div><div class="line">//let c = &apos;cc&apos;;</div><div class="line">let c = &apos;ccc&apos;;</div><div class="line">console.log(c);//报错 SyntaxError: Identifier &apos;c&apos; has already been declared</div><div class="line">//这跟var不一样，同级作用域下不能用let声明两个同名变量</div><div class="line"></div><div class="line">// let和var同时声明一个变量，会报错</div><div class="line">// var d = &apos;dd&apos;;</div><div class="line"> let d = &apos;ddd&apos;;</div><div class="line">// console.log(d);//报错</div></pre></td></tr></table></figure>
-</li>
+<li>let声明的变量只在当前代码块中有效</li>
 </ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//可以只声明，不赋值</span></div><div class="line"><span class="keyword">let</span> a;</div><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">//undefined</span></div><div class="line"></div><div class="line"><span class="comment">//let c = 'cc';</span></div><div class="line"><span class="keyword">let</span> c = <span class="string">'ccc'</span>;</div><div class="line"><span class="built_in">console</span>.log(c);<span class="comment">//报错 SyntaxError: Identifier 'c' has already been declared</span></div><div class="line"><span class="comment">//这跟var不一样，同级作用域下不能用let声明两个同名变量</span></div><div class="line"></div><div class="line"><span class="comment">// let和var同时声明一个变量，会报错</span></div><div class="line"><span class="comment">// var d = 'dd';</span></div><div class="line"> <span class="keyword">let</span> d = <span class="string">'ddd'</span>;</div><div class="line"><span class="comment">// console.log(d);//报错</span></div></pre></td></tr></table></figure>
 <h4 id="2-块级作用域"><a href="#2-块级作用域" class="headerlink" title="2. 块级作用域"></a>2. 块级作用域</h4><pre><code>- es5中只有全局作用域和函数作用域，块级作用域是没有的，在es6中，用大括号{}包裹的是一个块级作用域；
 - 在es5中我们通过闭包来实现独立作用域，避免变量污染全局变量，现在用{}即可
 - 在块级作用域中声明的变量，作用域外获取不到
-</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//大括号&#123;&#125;代表块级作用域</div><div class="line">&#123;</div><div class="line">    let a = 100;</div><div class="line">    b = 1000;</div><div class="line">    console.log(a) //100</div><div class="line">&#125;</div><div class="line">console.log(a); //报错</div><div class="line">console.log(b); //1000</div><div class="line"></div><div class="line">//并不会去找外面的demo变量，也不会输出undefined，这也证明了我们所说的let没有预解释一说</div><div class="line">let demo = 22222;</div><div class="line">&#123;</div><div class="line">    console.log(demo);//报错</div><div class="line">    let demo = 11; //当然，如果把let去掉，上面输出2222，下面输出11</div><div class="line">    console.log(demo); //11</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="3-const声明一个只读的常量。一旦声明，常量的值就不能改变。其他的特性跟let一样"><a href="#3-const声明一个只读的常量。一旦声明，常量的值就不能改变。其他的特性跟let一样" class="headerlink" title="3. const声明一个只读的常量。一旦声明，常量的值就不能改变。其他的特性跟let一样"></a>3. const声明一个只读的常量。一旦声明，常量的值就不能改变。其他的特性跟let一样</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">const a = 1;</div><div class="line">console.log(a);//1</div><div class="line">//a = 2;//报错</div><div class="line"></div><div class="line">//必须在声明的时候初始化(赋值)，否则报错</div><div class="line">const b;</div></pre></td></tr></table></figure>
+</code></pre><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//大括号&#123;&#125;代表块级作用域</span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">let</span> a = <span class="number">100</span>;</div><div class="line">    b = <span class="number">1000</span>;</div><div class="line">    <span class="built_in">console</span>.log(a) <span class="comment">//100</span></div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(a); <span class="comment">//报错</span></div><div class="line"><span class="built_in">console</span>.log(b); <span class="comment">//1000</span></div><div class="line"></div><div class="line"><span class="comment">//并不会去找外面的demo变量，也不会输出undefined，这也证明了我们所说的let没有预解释一说</span></div><div class="line"><span class="keyword">let</span> demo = <span class="number">22222</span>;</div><div class="line">&#123;</div><div class="line">    <span class="built_in">console</span>.log(demo);<span class="comment">//报错</span></div><div class="line">    <span class="keyword">let</span> demo = <span class="number">11</span>; <span class="comment">//当然，如果把let去掉，上面输出2222，下面输出11</span></div><div class="line">    <span class="built_in">console</span>.log(demo); <span class="comment">//11</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="3-const声明一个只读的常量。一旦声明，常量的值就不能改变。其他的特性跟let一样"><a href="#3-const声明一个只读的常量。一旦声明，常量的值就不能改变。其他的特性跟let一样" class="headerlink" title="3. const声明一个只读的常量。一旦声明，常量的值就不能改变。其他的特性跟let一样"></a>3. const声明一个只读的常量。一旦声明，常量的值就不能改变。其他的特性跟let一样</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> a = <span class="number">1</span>;</div><div class="line"><span class="built_in">console</span>.log(a);<span class="comment">//1</span></div><div class="line"><span class="comment">//a = 2;//报错</span></div><div class="line"></div><div class="line"><span class="comment">//必须在声明的时候初始化(赋值)，否则报错</span></div><div class="line"><span class="keyword">const</span> b;</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -429,7 +429,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -437,7 +437,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -446,7 +446,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

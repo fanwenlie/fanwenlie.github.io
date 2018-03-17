@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="樊文烈的博客">
 <meta property="og:description" content="模板字符串用反引号(数字1左边的那个键)包含，其中的变量用${}括起来 ${}输出的是值 使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-29T09:16:47.000Z">
+<meta property="og:updated_time" content="2018-03-17T10:36:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模板字符串">
 <meta name="twitter:description" content="模板字符串用反引号(数字1左边的那个键)包含，其中的变量用${}括起来 ${}输出的是值 使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中。">
@@ -306,21 +306,23 @@
       
         <h4 id="模板字符串用反引号-数字1左边的那个键-包含，其中的变量用-括起来"><a href="#模板字符串用反引号-数字1左边的那个键-包含，其中的变量用-括起来" class="headerlink" title="模板字符串用反引号(数字1左边的那个键)包含，其中的变量用${}括起来"></a>模板字符串用反引号(数字1左边的那个键)包含，其中的变量用${}括起来</h4><ul>
 <li>${}输出的是值</li>
-<li><p>使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中。</p>
+<li>使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中。</li>
+</ul>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var name = &apos;fwl&apos;,age = 23;</div><div class="line">//</div><div class="line">let desc = `$&#123;name&#125; is $&#123;age&#125; old!`;</div><div class="line">console.log(desc);//fwl is 23 old!</div><div class="line"></div><div class="line">//所有模板字符串的空格和换行，都是被保留的</div><div class="line">var str = `&lt;ul&gt;</div><div class="line">&lt;li&gt;a&lt;/li&gt;</div><div class="line">&lt;li&gt;b&lt;/li&gt;</div><div class="line">&lt;/ul&gt;`;</div><div class="line">console.log(str);</div></pre></td></tr></table></figure>
-</li>
-<li><p>大括号内部可以放入任意的JavaScript表达式，可以进行运算，以及引用对象属性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let obj =&#123;name:&apos;fwl&apos;,age:23&#125;;</div><div class="line">let str = `$&#123;obj.name&#125;的年龄是$&#123;obj.age&#125;`; //fwl的年龄是23</div><div class="line">console.log(str);</div><div class="line">let [x,y] = [1,2];</div><div class="line">console.log(`$&#123;x+y&#125;`); //3</div><div class="line">console.log(`$&#123;x&#125;+$&#123;y&#125;=$&#123;x+y&#125;`); //1+2=3</div></pre></td></tr></table></figure>
-</li>
-<li><p>甚至还能调用函数</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">'fwl'</span>,age = <span class="number">23</span>;</div><div class="line"><span class="comment">//</span></div><div class="line"><span class="keyword">let</span> desc = <span class="string">`<span class="subst">$&#123;name&#125;</span> is <span class="subst">$&#123;age&#125;</span> old!`</span>;</div><div class="line"><span class="built_in">console</span>.log(desc);<span class="comment">//fwl is 23 old!</span></div><div class="line"></div><div class="line"><span class="comment">//所有模板字符串的空格和换行，都是被保留的</span></div><div class="line"><span class="keyword">var</span> str = <span class="string">`&lt;ul&gt;</span></div><div class="line">&lt;li&gt;a&lt;/li&gt;</div><div class="line">&lt;li&gt;b&lt;/li&gt;</div><div class="line">&lt;/ul&gt;`;</div><div class="line"><span class="built_in">console</span>.log(str);</div></pre></td></tr></table></figure>
 <ul>
-<li>如果大括号中的值不是字符串，将按照一般的规则转为字符串。比如，大括号中是一个对象，将默认调用对象的toString方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function fn()&#123;</div><div class="line">    return &#123;a:1&#125;;</div><div class="line">&#125;</div><div class="line">console.log(`$&#123;fn()&#125;`);//[object Object]</div></pre></td></tr></table></figure>
-</li>
+<li>大括号内部可以放入任意的JavaScript表达式，可以进行运算，以及引用对象属性。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> obj =&#123;<span class="attr">name</span>:<span class="string">'fwl'</span>,<span class="attr">age</span>:<span class="number">23</span>&#125;;</div><div class="line"><span class="keyword">let</span> str = <span class="string">`<span class="subst">$&#123;obj.name&#125;</span>的年龄是<span class="subst">$&#123;obj.age&#125;</span>`</span>; <span class="comment">//fwl的年龄是23</span></div><div class="line"><span class="built_in">console</span>.log(str);</div><div class="line"><span class="keyword">let</span> [x,y] = [<span class="number">1</span>,<span class="number">2</span>];</div><div class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;x+y&#125;</span>`</span>); <span class="comment">//3</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;x&#125;</span>+<span class="subst">$&#123;y&#125;</span>=<span class="subst">$&#123;x+y&#125;</span>`</span>); <span class="comment">//1+2=3</span></div></pre></td></tr></table></figure>
+<ul>
+<li>甚至还能调用函数<ul>
+<li>如果大括号中的值不是字符串，将按照一般的规则转为字符串。比如，大括号中是一个对象，将默认调用对象的toString方法。</li>
 </ul>
 </li>
-<li><p>还能嵌套</p>
-</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;<span class="attr">a</span>:<span class="number">1</span>&#125;;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;fn()&#125;</span>`</span>);<span class="comment">//[object Object]</span></div></pre></td></tr></table></figure>
+<ul>
+<li>还能嵌套</li>
 </ul>
 
       
@@ -431,7 +433,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -439,7 +441,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -448,7 +450,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

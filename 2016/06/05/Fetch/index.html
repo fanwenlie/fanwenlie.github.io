@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="樊文烈的博客">
 <meta property="og:description" content="对于fetch只是简单的看了一下，具体研究等用到了再来分享">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-07-29T09:16:47.000Z">
+<meta property="og:updated_time" content="2018-03-17T10:32:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Fetch">
 <meta name="twitter:description" content="对于fetch只是简单的看了一下，具体研究等用到了再来分享">
@@ -308,14 +308,15 @@
 <p>对于fetch只是简单的看了一下，具体研究等用到了再来分享</p>
 </blockquote>
 <a id="more"></a>
-<h4 id="1-Fetch介绍"><a href="#1-Fetch介绍" class="headerlink" title="1. Fetch介绍"></a>1. Fetch介绍</h4><p>Fetch API提供了一个fetch()方法，它被定义在BOM的window对象中，你可以用它来发起对远程资源的请求。 该方法返回的是一个Promise对象，让你能够对请求的返回结果进行检索。<br><!-- more --><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//创建一个简单请求</div><div class="line">//第一个参数url，第二个是配置对象，比如请求方式等  cache是指定缓存还是不缓存响应结果</div><div class="line">var req = new Request(&apos;http://localhost:8000/fetch&apos;, &#123;method: &apos;get&apos;,cache:&apos;reload&apos;&#125;);</div><div class="line">fetch(req).then(function (response) &#123;</div><div class="line">        response.json().then(function (result)&#123;</div><div class="line">            console.log(result);</div><div class="line">        &#125;);</div><div class="line">&#125;).catch(function (err) &#123;</div><div class="line">        console.log(err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h4 id="1-Fetch介绍"><a href="#1-Fetch介绍" class="headerlink" title="1. Fetch介绍"></a>1. Fetch介绍</h4><p>Fetch API提供了一个fetch()方法，它被定义在BOM的window对象中，你可以用它来发起对远程资源的请求。 该方法返回的是一个Promise对象，让你能够对请求的返回结果进行检索。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//创建一个简单请求</span></div><div class="line"><span class="comment">//第一个参数url，第二个是配置对象，比如请求方式等  cache是指定缓存还是不缓存响应结果</span></div><div class="line"><span class="keyword">var</span> req = <span class="keyword">new</span> Request(<span class="string">'http://localhost:8000/fetch'</span>, &#123;<span class="attr">method</span>: <span class="string">'get'</span>,<span class="attr">cache</span>:<span class="string">'reload'</span>&#125;);</div><div class="line">fetch(req).then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">        response.json().then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(result);</div><div class="line">        &#125;);</div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>上面代码请求成功返回一个Response对象，可以<code>console.log(response)</code>看看具体信息。</p>
 <h5 id="1-1-Body参数"><a href="#1-1-Body参数" class="headerlink" title="1.1 Body参数"></a>1.1 Body参数</h5><p>因为在 Request 和 Response 中都包含 Body 的实现，所以包含以下类型：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ArrayBuffer</div><div class="line">ArrayBufferView (Uint8Array and friends)</div><div class="line">Blob/File  Blob是二进制大对象</div><div class="line">string</div><div class="line">URLSearchParams</div><div class="line">FormData</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">ArrayBuffer</span></div><div class="line">ArrayBufferView (<span class="built_in">Uint8Array</span> and friends)</div><div class="line">Blob/File  Blob是二进制大对象</div><div class="line">string</div><div class="line">URLSearchParams</div><div class="line">FormData</div></pre></td></tr></table></figure>
 <p>在 fetch 中实现了对应的方法，并返回的都是 Promise 类型。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">arrayBuffer()</div><div class="line">blob()</div><div class="line">json()</div><div class="line">text()</div><div class="line">formData()</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">arrayBuffer()</div><div class="line">blob()</div><div class="line">json()</div><div class="line">text()</div><div class="line">formData()</div></pre></td></tr></table></figure>
 <p>这样处理返回的数据类型就会变的特别地方便，如处理 json 格式的数据。</p>
-<h5 id="1-2-请求头headers"><a href="#1-2-请求头headers" class="headerlink" title="1.2 请求头headers"></a>1.2 请求头headers</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+<h5 id="1-2-请求头headers"><a href="#1-2-请求头headers" class="headerlink" title="1.2 请求头headers"></a>1.2 请求头headers</h5><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
 <p><a href="http://www.tuicool.com/articles/M7NRr27" target="_blank" rel="external">Fetch参考文档</a></p>
 
       
@@ -347,6 +348,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/01/JS盒子模型/" rel="next" title="JS盒子模型">
+                <i class="fa fa-chevron-left"></i> JS盒子模型
+              </a>
             
           </div>
 
@@ -422,7 +427,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -430,7 +435,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -439,7 +444,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

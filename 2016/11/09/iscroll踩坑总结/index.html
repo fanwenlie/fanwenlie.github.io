@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="樊文烈的博客">
 <meta property="og:description" content="iscroll.js是很棒的滚动插件，我经常用iscroll来实现局部滚动，代替原生滚动。以下是用iscroll遇到的一些小坑记录。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-14T06:16:28.000Z">
+<meta property="og:updated_time" content="2018-03-17T10:34:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iscroll踩坑总结">
 <meta name="twitter:description" content="iscroll.js是很棒的滚动插件，我经常用iscroll来实现局部滚动，代替原生滚动。以下是用iscroll遇到的一些小坑记录。">
@@ -316,12 +316,13 @@
 <li>content层也必须要有高度，有的时候浮动了，导致高度坍塌为0，就不会滚动</li>
 <li>content层的高度必须大于wrapper的高度，所以不能设置<code>height:100%</code></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;div id = &apos;warpper&apos;&gt;</div><div class="line">    &lt;div id=&quot;content&quot;&gt;...content&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;style&gt;</div><div class="line">#wrapper &#123;</div><div class="line">    position: relative;</div><div class="line">    height: 300px;</div><div class="line">    width: 300px;</div><div class="line">    margin: 20px auto;</div><div class="line">    background-color: #CCC;</div><div class="line">    overflow: hidden;</div><div class="line">&#125;</div><div class="line">#content &#123;</div><div class="line">    width: 500px;</div><div class="line">    /*heigth:100%;*/ //不能是100%。因为这样高度就变成300了,肯定不会触发iscroll</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">'warpper'</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span>...content<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">&lt;style&gt;</div><div class="line">#wrapper &#123;</div><div class="line">    position: relative;</div><div class="line">    height: 300px;</div><div class="line">    width: 300px;</div><div class="line">    margin: 20px auto;</div><div class="line">    background-color: #CCC;</div><div class="line">    overflow: hidden;</div><div class="line">&#125;</div><div class="line">#content &#123;</div><div class="line">    width: 500px;</div><div class="line">    /*heigth:100%;*/ //不能是100%。因为这样高度就变成300了,肯定不会触发iscroll</div><div class="line">&#125;</div><div class="line"></div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
 <ol>
 <li>如果要加局部滚动的元素被<code>display：none</code>了，那么你block的时候局部滚动也不会触发。你需要把局部滚动的代码放到点击触发<code>display：block</code>的事件中去。</li>
 </ol>
 <p>原因大概是<code>display：none</code>的时候你执行new iScroll()，js获取不到滚动元素的高度</p>
-<p>==必须<code>display：block</code>之后再初始化iscroll实例==</p>
+<p><strong>必须<code>display：block</code>之后再初始化iscroll实例</strong></p>
 
       
     </div>
@@ -353,16 +354,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/09/箭头函数/" rel="next" title="箭头函数">
-                <i class="fa fa-chevron-left"></i> 箭头函数
+              <a href="/2016/11/09/对nodejs的理解/" rel="next" title="对nodejs的理解">
+                <i class="fa fa-chevron-left"></i> 对nodejs的理解
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/11/09/对nodejs的理解/" rel="prev" title="对nodejs的理解">
-                对nodejs的理解 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/11/对发布订阅模式的理解/" rel="prev" title="对发布订阅模式的理解">
+                对发布订阅模式的理解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -431,7 +432,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -439,7 +440,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -448,7 +449,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
