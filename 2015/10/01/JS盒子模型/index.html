@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="樊文烈的博客">
 <meta property="og:description" content="JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-17T10:55:07.000Z">
+<meta property="og:updated_time" content="2018-03-17T11:01:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS盒子模型">
 <meta name="twitter:description" content="JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值">
@@ -313,14 +313,28 @@ console.dir(oDiv2); //在控制台查看原型上的方法
 
 获取的高度跟内容溢出没有关系 也就是说获得的值并不包括溢出的部分
 clientWidth/clientHeight/offsetWidth/offsetHeight 
-</code></pre><h5 id="1-clientWidth-–-gt-内容的宽度-左右padding"><a href="#1-clientWidth-–-gt-内容的宽度-左右padding" class="headerlink" title="1. clientWidth –&gt;内容的宽度+左右padding"></a>1. clientWidth –&gt;内容的宽度+左右padding</h5><h5 id="2-clientHeight-–-gt-内容的高度-上下padding"><a href="#2-clientHeight-–-gt-内容的高度-上下padding" class="headerlink" title="2. clientHeight –&gt;内容的高度+上下padding"></a>2. clientHeight –&gt;内容的高度+上下padding</h5><pre><code>clientLeft：左边框的宽度，clientTop：上边框的高度  （没有直接获取下边框和右边框的属性）
-相当于border[Left/Top]Width
-</code></pre><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(oDiv.clientHeight);--&gt;<span class="number">134</span>  height-&gt;<span class="number">100</span>+上下padding-&gt;<span class="number">34</span>  虽然内容溢出了，但是值并不包括溢出的部分</div><div class="line"><span class="built_in">console</span>.log(oDiv.clientLeft);--&gt;<span class="number">2</span></div></pre></td></tr></table></figure>
-<ul>
-<li>在我们学习的时候，应该学会经常使用console.dir(oDiv),旨在找到元素上的属性和方法，研究属性和方法的意思</li>
-<li>拓展：classList属性：获取元素的class属性键值对  这个属性在移动端有用，因为移动端不需要考虑兼容性</li>
+</code></pre><h5 id="1-clientWidth-–-gt-内容的宽度-左右padding"><a href="#1-clientWidth-–-gt-内容的宽度-左右padding" class="headerlink" title="1. clientWidth –&gt;内容的宽度+左右padding"></a>1. clientWidth –&gt;内容的宽度+左右padding</h5><h5 id="2-clientHeight-–-gt-内容的高度-上下padding"><a href="#2-clientHeight-–-gt-内容的高度-上下padding" class="headerlink" title="2. clientHeight –&gt;内容的高度+上下padding"></a>2. clientHeight –&gt;内容的高度+上下padding</h5><ul>
+<li>clientLeft：左边框的宽度，clientTop：上边框的高度  （没有直接获取下边框和右边框的属性）</li>
+<li>相当于border[Left/Top]Width</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">  oDiv.classList.add(<span class="string">"test100"</span>);</div><div class="line">  <span class="built_in">console</span>.log(oDiv.classList);</div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line">   </div><div class="line">##### 3. offsetWidth  --&gt;内容的宽度+左右padding+左右的border值</div><div class="line"></div><div class="line">##### 4. offsetHeight --&gt;内容的高度+上下padding+上下的border值</div><div class="line">       - offsetParent：当前元素的父级参照物  如果包含自己的父元素有定位属性，那么offsetParent就是自己的parentNode；</div><div class="line">       - 如果没有定位属性，会一直向上一层找，如果都没有，最终会找到body</div><div class="line">       - offsetLeft/offsetTop：当前元素的外边框距离父级参照物的内边框的偏移量</div><div class="line">       </div><div class="line">`<span class="string">``</span>js</div><div class="line">    <span class="built_in">console</span>.log(oDiv.offsetLeft);-&gt;<span class="number">8</span>  div距离body的值</div><div class="line">    <span class="built_in">console</span>.log(oDiv3.offsetParent);-&gt;body</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">document</span>.body.offsetParent);-&gt;<span class="literal">null</span></div><div class="line">    <span class="built_in">console</span>.log(oDiv3.offsetLeft);-&gt;<span class="number">30</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(oDiv.clientHeight);</div><div class="line"><span class="comment">//--&gt;134  height-&gt;100+上下padding-&gt;34  虽然内容溢出了，但是值并不包括溢出的部分</span></div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(oDiv.clientLeft);--&gt;<span class="number">2</span></div></pre></td></tr></table></figure>
+<ul>
+<li><p>经常使用console.dir(oDiv),旨在找到元素上的属性和方法，研究属性和方法的意思</p>
+</li>
+<li><p>拓展：classList属性：获取元素的class属性键值对  这个属性在移动端有用，因为移动端不需要考虑兼容性</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">oDiv.classList.add(<span class="string">"test100"</span>);</div><div class="line"><span class="built_in">console</span>.log(oDiv.classList);</div></pre></td></tr></table></figure>
+<h5 id="3-offsetWidth-–-gt-内容的宽度-左右padding-左右的border值"><a href="#3-offsetWidth-–-gt-内容的宽度-左右padding-左右的border值" class="headerlink" title="3. offsetWidth  –&gt;内容的宽度+左右padding+左右的border值"></a>3. offsetWidth  –&gt;内容的宽度+左右padding+左右的border值</h5><h5 id="4-offsetHeight-–-gt-内容的高度-上下padding-上下的border值"><a href="#4-offsetHeight-–-gt-内容的高度-上下padding-上下的border值" class="headerlink" title="4. offsetHeight –&gt;内容的高度+上下padding+上下的border值"></a>4. offsetHeight –&gt;内容的高度+上下padding+上下的border值</h5><ul>
+<li><p>offsetParent：当前元素的父级参照物  如果包含自己的父元素有定位属性，那么offsetParent就是自己的parentNode；</p>
+</li>
+<li><p>如果没有定位属性，会一直向上一层找，如果都没有，最终会找到body</p>
+</li>
+<li><p>offsetLeft/offsetTop：当前元素的外边框距离父级参照物的内边框的偏移量</p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(oDiv.offsetLeft);-&gt;<span class="number">8</span>  div距离body的值</div><div class="line"><span class="built_in">console</span>.log(oDiv3.offsetParent);-&gt;body</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">document</span>.body.offsetParent);-&gt;<span class="literal">null</span></div><div class="line"><span class="built_in">console</span>.log(oDiv3.offsetLeft);-&gt;<span class="number">30</span></div></pre></td></tr></table></figure>
+<hr>
 <p>以下两个能获得溢出的内容  也就是真实内容的高度/宽度</p>
 <h5 id="5-scrollWidth-–-gt-约等于-真实内容的宽-左padding值"><a href="#5-scrollWidth-–-gt-约等于-真实内容的宽-左padding值" class="headerlink" title="5. scrollWidth –&gt;约等于 真实内容的宽+左padding值"></a>5. scrollWidth –&gt;约等于 真实内容的宽+左padding值</h5><h5 id="6-scrollHeight-–-gt-约等于-真实内容的高-上padding值"><a href="#6-scrollHeight-–-gt-约等于-真实内容的高-上padding值" class="headerlink" title="6. scrollHeight –&gt;约等于 真实内容的高+上padding值"></a>6. scrollHeight –&gt;约等于 真实内容的高+上padding值</h5><ul>
 <li><p>如果内容没有溢出，则scrollWidth，scrollHeight与clientWidth，clientHeight获取的值一模一样 也就是内容宽高+左右/上下padding</p>
@@ -491,7 +505,7 @@ clientWidth/clientHeight/offsetWidth/offsetHeight
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值"><span class="nav-number">1.</span> <span class="nav-text">一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-clientWidth-–-gt-内容的宽度-左右padding"><span class="nav-number">1.1.</span> <span class="nav-text">1. clientWidth –>内容的宽度+左右padding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-clientHeight-–-gt-内容的高度-上下padding"><span class="nav-number">1.2.</span> <span class="nav-text">2. clientHeight –>内容的高度+上下padding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-scrollWidth-–-gt-约等于-真实内容的宽-左padding值"><span class="nav-number">1.3.</span> <span class="nav-text">5. scrollWidth –>约等于 真实内容的宽+左padding值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-scrollHeight-–-gt-约等于-真实内容的高-上padding值"><span class="nav-number">1.4.</span> <span class="nav-text">6. scrollHeight –>约等于 真实内容的高+上padding值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、关于js盒子模型属性取值的问题"><span class="nav-number">2.</span> <span class="nav-text">二、关于js盒子模型属性取值的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、关于操作浏览器本身的盒子模型信息"><span class="nav-number">3.</span> <span class="nav-text">三、关于操作浏览器本身的盒子模型信息</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值"><span class="nav-number">1.</span> <span class="nav-text">一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-clientWidth-–-gt-内容的宽度-左右padding"><span class="nav-number">1.1.</span> <span class="nav-text">1. clientWidth –>内容的宽度+左右padding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-clientHeight-–-gt-内容的高度-上下padding"><span class="nav-number">1.2.</span> <span class="nav-text">2. clientHeight –>内容的高度+上下padding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-offsetWidth-–-gt-内容的宽度-左右padding-左右的border值"><span class="nav-number">1.3.</span> <span class="nav-text">3. offsetWidth  –>内容的宽度+左右padding+左右的border值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-offsetHeight-–-gt-内容的高度-上下padding-上下的border值"><span class="nav-number">1.4.</span> <span class="nav-text">4. offsetHeight –>内容的高度+上下padding+上下的border值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-scrollWidth-–-gt-约等于-真实内容的宽-左padding值"><span class="nav-number">1.5.</span> <span class="nav-text">5. scrollWidth –>约等于 真实内容的宽+左padding值</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-scrollHeight-–-gt-约等于-真实内容的高-上padding值"><span class="nav-number">1.6.</span> <span class="nav-text">6. scrollHeight –>约等于 真实内容的高+上padding值</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、关于js盒子模型属性取值的问题"><span class="nav-number">2.</span> <span class="nav-text">二、关于js盒子模型属性取值的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、关于操作浏览器本身的盒子模型信息"><span class="nav-number">3.</span> <span class="nav-text">三、关于操作浏览器本身的盒子模型信息</span></a></li></ol></div>
             
           </div>
         </section>
