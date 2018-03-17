@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="樊文烈的博客">
 <meta property="og:description" content="JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-17T10:50:59.000Z">
+<meta property="og:updated_time" content="2018-03-17T10:55:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS盒子模型">
 <meta name="twitter:description" content="JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值">
@@ -309,7 +309,8 @@
 </blockquote>
 <a id="more"></a>
 <h4 id="一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值"><a href="#一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值" class="headerlink" title="一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值"></a>一、JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的样式信息值</h4><pre><code>js当中没有直接获取宽高的属性，例如oDiv.width-&gt;这是有问题的。但是有直接宽高相关的属性：
-console.dir(oDiv2);
+console.dir(oDiv2); //在控制台查看原型上的方法
+
 获取的高度跟内容溢出没有关系 也就是说获得的值并不包括溢出的部分
 clientWidth/clientHeight/offsetWidth/offsetHeight 
 </code></pre><h5 id="1-clientWidth-–-gt-内容的宽度-左右padding"><a href="#1-clientWidth-–-gt-内容的宽度-左右padding" class="headerlink" title="1. clientWidth –&gt;内容的宽度+左右padding"></a>1. clientWidth –&gt;内容的宽度+左右padding</h5><h5 id="2-clientHeight-–-gt-内容的高度-上下padding"><a href="#2-clientHeight-–-gt-内容的高度-上下padding" class="headerlink" title="2. clientHeight –&gt;内容的高度+上下padding"></a>2. clientHeight –&gt;内容的高度+上下padding</h5><pre><code>clientLeft：左边框的宽度，clientTop：上边框的高度  （没有直接获取下边框和右边框的属性）
@@ -317,10 +318,9 @@ clientWidth/clientHeight/offsetWidth/offsetHeight
 </code></pre><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(oDiv.clientHeight);--&gt;<span class="number">134</span>  height-&gt;<span class="number">100</span>+上下padding-&gt;<span class="number">34</span>  虽然内容溢出了，但是值并不包括溢出的部分</div><div class="line"><span class="built_in">console</span>.log(oDiv.clientLeft);--&gt;<span class="number">2</span></div></pre></td></tr></table></figure>
 <ul>
 <li>在我们学习的时候，应该学会经常使用console.dir(oDiv),旨在找到元素上的属性和方法，研究属性和方法的意思</li>
-<li><p>拓展：classList属性：获取元素的class属性键值对  这个属性在移动端有用，因为移动端不需要考虑兼容性</p>
- <figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">     oDiv.classList.add(&quot;test100&quot;);</div><div class="line">     console.log(oDiv.classList);</div><div class="line">   ```  </div><div class="line">   </div><div class="line">##### 3. offsetWidth  --&gt;内容的宽度+左右padding+左右的border值</div><div class="line">##### 4. offsetHeight --&gt;内容的高度+上下padding+上下的border值</div><div class="line">       - offsetParent：当前元素的父级参照物  如果包含自己的父元素有定位属性，那么offsetParent就是自己的parentNode；</div><div class="line">       - 如果没有定位属性，会一直向上一层找，如果都没有，最终会找到body</div><div class="line">       - offsetLeft/offsetTop：当前元素的外边框距离父级参照物的内边框的偏移量</div><div class="line">       </div><div class="line">```js</div><div class="line">    console.log(oDiv.offsetLeft);-&gt;8  div距离body的值</div><div class="line">    console.log(oDiv3.offsetParent);-&gt;body</div><div class="line">    console.log(document.body.offsetParent);-&gt;null</div><div class="line">    console.log(oDiv3.offsetLeft);-&gt;30</div></pre></td></tr></table></figure>
-</li>
+<li>拓展：classList属性：获取元素的class属性键值对  这个属性在移动端有用，因为移动端不需要考虑兼容性</li>
 </ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">  oDiv.classList.add(<span class="string">"test100"</span>);</div><div class="line">  <span class="built_in">console</span>.log(oDiv.classList);</div><div class="line"><span class="string">``</span><span class="string">`  </span></div><div class="line">   </div><div class="line">##### 3. offsetWidth  --&gt;内容的宽度+左右padding+左右的border值</div><div class="line"></div><div class="line">##### 4. offsetHeight --&gt;内容的高度+上下padding+上下的border值</div><div class="line">       - offsetParent：当前元素的父级参照物  如果包含自己的父元素有定位属性，那么offsetParent就是自己的parentNode；</div><div class="line">       - 如果没有定位属性，会一直向上一层找，如果都没有，最终会找到body</div><div class="line">       - offsetLeft/offsetTop：当前元素的外边框距离父级参照物的内边框的偏移量</div><div class="line">       </div><div class="line">`<span class="string">``</span>js</div><div class="line">    <span class="built_in">console</span>.log(oDiv.offsetLeft);-&gt;<span class="number">8</span>  div距离body的值</div><div class="line">    <span class="built_in">console</span>.log(oDiv3.offsetParent);-&gt;body</div><div class="line">    <span class="built_in">console</span>.log(<span class="built_in">document</span>.body.offsetParent);-&gt;<span class="literal">null</span></div><div class="line">    <span class="built_in">console</span>.log(oDiv3.offsetLeft);-&gt;<span class="number">30</span></div></pre></td></tr></table></figure>
 <p>以下两个能获得溢出的内容  也就是真实内容的高度/宽度</p>
 <h5 id="5-scrollWidth-–-gt-约等于-真实内容的宽-左padding值"><a href="#5-scrollWidth-–-gt-约等于-真实内容的宽-左padding值" class="headerlink" title="5. scrollWidth –&gt;约等于 真实内容的宽+左padding值"></a>5. scrollWidth –&gt;约等于 真实内容的宽+左padding值</h5><h5 id="6-scrollHeight-–-gt-约等于-真实内容的高-上padding值"><a href="#6-scrollHeight-–-gt-约等于-真实内容的高-上padding值" class="headerlink" title="6. scrollHeight –&gt;约等于 真实内容的高+上padding值"></a>6. scrollHeight –&gt;约等于 真实内容的高+上padding值</h5><ul>
 <li><p>如果内容没有溢出，则scrollWidth，scrollHeight与clientWidth，clientHeight获取的值一模一样 也就是内容宽高+左右/上下padding</p>
@@ -330,7 +330,7 @@ clientWidth/clientHeight/offsetWidth/offsetHeight
 </ul>
 <figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">console</span>.log(oDiv.scrollHeight);-&gt;<span class="number">214</span></div><div class="line">scrollLeft/scrollTop:滚动条卷去的高度/宽度</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(oDiv2.scrollHeight);-&gt;<span class="number">240</span></div></pre></td></tr></table></figure>
 <p>对浏览器的操作：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">1.获得整屏的宽高</div><div class="line">  document.documentElement.clientWidth || document.body.clientWidth</div><div class="line">2.获得整个文档的宽高（真实宽高-&gt;也就是一直滑到网页底部，这一整个高度）</div><div class="line">  document.documentElement.scrollWidth || document.body.scrollHeight</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="number">1.</span>获得整屏的宽高</div><div class="line">  <span class="built_in">document</span>.documentElement.clientWidth || <span class="built_in">document</span>.body.clientWidth</div><div class="line"><span class="number">2.</span>获得整个文档的宽高（真实宽高-&gt;也就是一直滑到网页底部，这一整个高度）</div><div class="line">  <span class="built_in">document</span>.documentElement.scrollWidth || <span class="built_in">document</span>.body.scrollHeight</div></pre></td></tr></table></figure>
 <h4 id="二、关于js盒子模型属性取值的问题"><a href="#二、关于js盒子模型属性取值的问题" class="headerlink" title="二、关于js盒子模型属性取值的问题"></a>二、关于js盒子模型属性取值的问题</h4><pre><code>我们通过上面十三个属性获取的结果值永远不可能出现小数，都是整数；浏览器获取结果的时候，在原来真实的结果的基础上进行四舍五入
 </code></pre><h4 id="三、关于操作浏览器本身的盒子模型信息"><a href="#三、关于操作浏览器本身的盒子模型信息" class="headerlink" title="三、关于操作浏览器本身的盒子模型信息"></a>三、关于操作浏览器本身的盒子模型信息</h4><ul>
 <li><p>clientWidth/clientHeight是当前浏览器可视窗口的宽度和高度（一屏幕的宽度和高度）注意理解一屏幕</p>
@@ -340,7 +340,7 @@ clientWidth/clientHeight/offsetWidth/offsetHeight
 <li><p>只要是关于操作浏览器的属性，一般来说，不管哪些属性，不管是什么浏览器，也不管是获取还是设置，想要都兼容的话，都需要些两套：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">获取  document.documentElement.scrollWidth || document.body.scrollHeight （documentElement在前，body在后）</div><div class="line">设置  document.documentElement.scrollTop=0;document.body.scrollLeft=0;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">获取  <span class="built_in">document</span>.documentElement.scrollWidth || <span class="built_in">document</span>.body.scrollHeight （documentElement在前，body在后）</div><div class="line">设置  <span class="built_in">document</span>.documentElement.scrollTop=<span class="number">0</span>;<span class="built_in">document</span>.body.scrollLeft=<span class="number">0</span>;</div></pre></td></tr></table></figure>
       
     </div>
 
