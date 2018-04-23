@@ -88,7 +88,7 @@
 <meta property="og:site_name" content="樊文烈的博客">
 <meta property="og:description" content="JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的宽度和高度值">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-18T06:42:28.000Z">
+<meta property="og:updated_time" content="2018-03-18T06:48:11.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS盒子模型">
 <meta name="twitter:description" content="JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的宽度和高度值">
@@ -354,15 +354,16 @@
 <li>我们通过上面十三个属性获取的结果值永远不可能出现小数，都是<strong>整数</strong>；浏览器获取结果的时候，在原来真实的结果的基础上进行四舍五入</li>
 </ul>
 <h4 id="五、关于操作浏览器本身的盒子模型信息"><a href="#五、关于操作浏览器本身的盒子模型信息" class="headerlink" title="五、关于操作浏览器本身的盒子模型信息"></a>五、关于操作浏览器本身的盒子模型信息</h4><ul>
-<li><p>clientWidth/clientHeight是当前浏览器可视窗口的宽度和高度（一屏幕的宽度和高度）注意理解一屏幕</p>
+<li><p>c<code>lientWidth/clientHeight</code>是当前浏览器可视窗口的宽度和高度（一屏幕的宽度和高度）注意理解一屏幕</p>
 </li>
-<li></li>
-<li><p>scrollWidth/scrollHeight是当前页面的真实宽度和高度（所有屏加起来的宽度和高度）</p>
+<li><p><code>scrollWidth/scrollHeight</code>是当前页面的真实宽度和高度（所有屏加起来的宽度和高度）</p>
 </li>
 <li><p>只要是关于操作浏览器的属性，一般来说，不管哪些属性，不管是什么浏览器，也不管是获取还是设置，想要都兼容的话，都需要些两套：</p>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">获取  <span class="built_in">document</span>.documentElement.scrollWidth || <span class="built_in">document</span>.body.scrollHeight （documentElement在前，body在后）</div><div class="line">设置  <span class="built_in">document</span>.documentElement.scrollTop=<span class="number">0</span>;<span class="built_in">document</span>.body.scrollLeft=<span class="number">0</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//获取  </span></div><div class="line"><span class="built_in">document</span>.documentElement.scrollWidth || <span class="built_in">document</span>.body.scrollHeight （documentElement在前，body在后）</div><div class="line"></div><div class="line"><span class="comment">//设置  </span></div><div class="line"><span class="built_in">document</span>.documentElement.scrollTop=<span class="number">0</span>;<span class="built_in">document</span>.body.scrollLeft=<span class="number">0</span>;</div></pre></td></tr></table></figure>
+<h4 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h4><p>获取和设置盒子属性会导致页面reflow(回流，或者说重排)。使用的时候要注意，尽量把值缓存起来</p>
+
       
     </div>
 
@@ -513,7 +514,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的宽度和高度值"><span class="nav-number">1.</span> <span class="nav-text">JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的宽度和高度值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一、clientWidth-clientHeight"><span class="nav-number">2.</span> <span class="nav-text">一、clientWidth/clientHeight</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-clientWidth-–-gt-内容的宽度-左右padding"><span class="nav-number">2.1.</span> <span class="nav-text">1. clientWidth –>内容的宽度+左右padding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-clientHeight-–-gt-内容的高度-上下padding"><span class="nav-number">2.2.</span> <span class="nav-text">2. clientHeight –>内容的高度+上下padding</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、offsetWidth-offsetHeight"><span class="nav-number">3.</span> <span class="nav-text">二、offsetWidth/offsetHeight</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-offsetWidth"><span class="nav-number">3.1.</span> <span class="nav-text">3. offsetWidth</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-offsetHeight"><span class="nav-number">3.2.</span> <span class="nav-text">4. offsetHeight</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、scrollWidth-scrollHeight"><span class="nav-number">4.</span> <span class="nav-text">三、scrollWidth/scrollHeight</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-scrollWidth"><span class="nav-number">4.1.</span> <span class="nav-text">5. scrollWidth</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-scrollHeight"><span class="nav-number">4.2.</span> <span class="nav-text">6. scrollHeight</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、关于js盒子模型属性取值的问题"><span class="nav-number">5.</span> <span class="nav-text">四、关于js盒子模型属性取值的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、关于操作浏览器本身的盒子模型信息"><span class="nav-number">6.</span> <span class="nav-text">五、关于操作浏览器本身的盒子模型信息</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的宽度和高度值"><span class="nav-number">1.</span> <span class="nav-text">JS盒子模型：通过JS中提供的一系列属性和方法，来获取页面中元素的宽度和高度值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一、clientWidth-clientHeight"><span class="nav-number">2.</span> <span class="nav-text">一、clientWidth/clientHeight</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-clientWidth-–-gt-内容的宽度-左右padding"><span class="nav-number">2.1.</span> <span class="nav-text">1. clientWidth –>内容的宽度+左右padding</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-clientHeight-–-gt-内容的高度-上下padding"><span class="nav-number">2.2.</span> <span class="nav-text">2. clientHeight –>内容的高度+上下padding</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二、offsetWidth-offsetHeight"><span class="nav-number">3.</span> <span class="nav-text">二、offsetWidth/offsetHeight</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#3-offsetWidth"><span class="nav-number">3.1.</span> <span class="nav-text">3. offsetWidth</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-offsetHeight"><span class="nav-number">3.2.</span> <span class="nav-text">4. offsetHeight</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三、scrollWidth-scrollHeight"><span class="nav-number">4.</span> <span class="nav-text">三、scrollWidth/scrollHeight</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#5-scrollWidth"><span class="nav-number">4.1.</span> <span class="nav-text">5. scrollWidth</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-scrollHeight"><span class="nav-number">4.2.</span> <span class="nav-text">6. scrollHeight</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四、关于js盒子模型属性取值的问题"><span class="nav-number">5.</span> <span class="nav-text">四、关于js盒子模型属性取值的问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五、关于操作浏览器本身的盒子模型信息"><span class="nav-number">6.</span> <span class="nav-text">五、关于操作浏览器本身的盒子模型信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩展"><span class="nav-number">7.</span> <span class="nav-text">扩展</span></a></li></ol></div>
             
           </div>
         </section>
