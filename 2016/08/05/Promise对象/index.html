@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -59,39 +59,39 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="ES6," />
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="ES6,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2">
 
 
 
 
 
 
-<meta name="description" content="回调地狱 在需要多个操作的时候，会导致多个回调函数嵌套，导致代码不够直观，就是常说的回调地狱。 现在有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。">
+<meta name="description" content="回调地狱 在需要多个操作的时候，会导致多个回调函数嵌套，导致代码不够直观，就是常说的回调地狱。   现在有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Promise对象">
 <meta property="og:url" content="http://yoursite.com/2016/08/05/Promise对象/index.html">
 <meta property="og:site_name" content="樊文烈的博客">
-<meta property="og:description" content="回调地狱 在需要多个操作的时候，会导致多个回调函数嵌套，导致代码不够直观，就是常说的回调地狱。 现在有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。">
+<meta property="og:description" content="回调地狱 在需要多个操作的时候，会导致多个回调函数嵌套，导致代码不够直观，就是常说的回调地狱。   现在有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2018-03-17T10:34:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Promise对象">
-<meta name="twitter:description" content="回调地狱 在需要多个操作的时候，会导致多个回调函数嵌套，导致代码不够直观，就是常说的回调地狱。 现在有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。">
+<meta name="twitter:description" content="回调地狱 在需要多个操作的时候，会导致多个回调函数嵌套，导致代码不够直观，就是常说的回调地狱。   现在有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。">
 
 
 
@@ -112,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/05/Promise对象/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/05/Promise对象/">
 
 
   <title> Promise对象 | 樊文烈的博客 </title>
 </head>
 
-<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="//schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -139,12 +139,12 @@
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">樊文烈的博客</span>
       <span class="logo-line-after"><i></i></span>
@@ -171,7 +171,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -181,7 +181,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -191,7 +191,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -201,7 +201,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -234,7 +234,7 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
 
     
       <header class="post-header">
@@ -263,14 +263,14 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
                   <a href="/categories/ES6/" itemprop="url" rel="index">
                     <span itemprop="name">ES6</span>
                   </a>
@@ -306,6 +306,8 @@
       
         <h4 id="回调地狱"><a href="#回调地狱" class="headerlink" title="回调地狱"></a>回调地狱</h4><blockquote>
 <p>在需要多个操作的时候，会导致多个回调函数嵌套，导致代码不够直观，就是常说的回调地狱。</p>
+</blockquote>
+<blockquote>
 <p>现在有了Promise对象，就可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数。此外，Promise对象提供统一的接口，使得控制异步操作更加容易。</p>
 </blockquote>
 <a id="more"></a>
@@ -327,7 +329,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve,reject</span>)</span>&#123;</div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="keyword">var</span> flag = <span class="built_in">Math</span>.random();</div><div class="line">        <span class="keyword">if</span>(flag&gt;<span class="number">0.5</span>)&#123;</div><div class="line">            resolve(flag);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            reject(<span class="string">'小于等于0.5'</span>)</div><div class="line">        &#125;</div><div class="line">    &#125;,<span class="number">10</span>);</div><div class="line"></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve,reject</span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="keyword">var</span> flag = <span class="built_in">Math</span>.random();</span><br><span class="line">        <span class="keyword">if</span>(flag&gt;<span class="number">0.5</span>)&#123;</span><br><span class="line">            resolve(flag);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            reject(<span class="string">'小于等于0.5'</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <h5 id="2-2-调用"><a href="#2-2-调用" class="headerlink" title="2.2 调用"></a>2.2 调用</h5><ul>
 <li><p>then方法：可以接受两个回调函数作为参数。这两个函数都接受Promise对象传出的值作为参数。</p>
 <ul>
@@ -340,11 +342,11 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//then方法返回一个promise，所以可以实现链式写法</span></div><div class="line"></div><div class="line">promise.then(<span class="function"><span class="keyword">function</span> (<span class="params">a</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;,<span class="function"><span class="keyword">function</span> (<span class="params">b</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.error(b)</div><div class="line">&#125;);</div><div class="line"></div><div class="line">promise.then(<span class="function"><span class="keyword">function</span> (<span class="params">a</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(a);</div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">b</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.error(b)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//then方法返回一个promise，所以可以实现链式写法</span></span><br><span class="line"></span><br><span class="line">promise.then(<span class="function"><span class="keyword">function</span> (<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;,<span class="function"><span class="keyword">function</span> (<span class="params">b</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(b)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">promise.then(<span class="function"><span class="keyword">function</span> (<span class="params">a</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">b</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.error(b)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <ul>
 <li>then或者catch，不管是链式写几次，形参a,b的值都是resolve或者reject传入的值，不会改变,当然，如果你更改Promise构造函数中传入的函数，还是会改变的</li>
 </ul>
-<h4 id="Promise简单模拟"><a href="#Promise简单模拟" class="headerlink" title="Promise简单模拟"></a>Promise简单模拟</h4><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>() &#123;</div><div class="line">        <span class="keyword">this</span>._event = &#123;&#125;;</div><div class="line">    &#125;</div><div class="line">    on(type, callback) &#123;</div><div class="line">        <span class="keyword">if</span> (!<span class="keyword">this</span>._event[type]) &#123;</div><div class="line">            <span class="keyword">this</span>._event[type] = [];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>._event[type].push(callback);</div><div class="line">    &#125;</div><div class="line">    off(type, callback) &#123;</div><div class="line">        <span class="keyword">if</span> (!<span class="keyword">this</span>._event[type]) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>._event[type] = <span class="keyword">this</span>._event[type].filter(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</div><div class="line">            item != callback;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">    emit(type, ...params) &#123;</div><div class="line">        <span class="keyword">this</span>._event[type].forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</div><div class="line">            item.apply(<span class="keyword">this</span>, params);</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">myPromise</span> <span class="keyword">extends</span> <span class="title">Event</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(asyncFn) &#123;</div><div class="line">        <span class="keyword">super</span>();</div><div class="line">        <span class="keyword">this</span>._status = <span class="string">'pending'</span>;</div><div class="line">        setTimeout(</div><div class="line">            <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">                asyncFn(<span class="keyword">this</span>.resolve.bind(<span class="keyword">this</span>), <span class="keyword">this</span>.reject.bind(<span class="keyword">this</span>))</div><div class="line">                &#125;</div><div class="line">        );</div><div class="line">    &#125;</div><div class="line">    resolve(...params) &#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>._status !== <span class="string">'pending'</span>) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.emit(<span class="string">'resolve'</span>, ...params);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    reject(...params) &#123;</div><div class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>._status !== <span class="string">'pending'</span>) &#123;</div><div class="line">            <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.emit(<span class="string">'reject'</span>, ...params);</div><div class="line">    &#125;</div><div class="line">    then(callback) &#123;</div><div class="line">        <span class="keyword">this</span>.on(<span class="string">'resolve'</span>, callback);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">catch</span> (callback) &#123;</div><div class="line">        <span class="keyword">this</span>.on(<span class="string">'reject'</span>, callback);</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="comment">//demo</span></div><div class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> myPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</div><div class="line">    resolve(<span class="number">11</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="number">3</span>);</div><div class="line"></div><div class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(i);</div><div class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h4 id="Promise简单模拟"><a href="#Promise简单模拟" class="headerlink" title="Promise简单模拟"></a>Promise简单模拟</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>() &#123;</span><br><span class="line">        <span class="keyword">this</span>._event = &#123;&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    on(type, callback) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">this</span>._event[type]) &#123;</span><br><span class="line">            <span class="keyword">this</span>._event[type] = [];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>._event[type].push(callback);</span><br><span class="line">    &#125;</span><br><span class="line">    off(type, callback) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!<span class="keyword">this</span>._event[type]) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>._event[type] = <span class="keyword">this</span>._event[type].filter(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">            item != callback;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    emit(type, ...params) &#123;</span><br><span class="line">        <span class="keyword">this</span>._event[type].forEach(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">            item.apply(<span class="keyword">this</span>, params);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">myPromise</span> <span class="keyword">extends</span> <span class="title">Event</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(asyncFn) &#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>._status = <span class="string">'pending'</span>;</span><br><span class="line">        setTimeout(</span><br><span class="line">            () =&gt; &#123;</span><br><span class="line">                asyncFn(<span class="keyword">this</span>.resolve.bind(<span class="keyword">this</span>), <span class="keyword">this</span>.reject.bind(<span class="keyword">this</span>))</span><br><span class="line">                &#125;</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">    resolve(...params) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>._status !== <span class="string">'pending'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.emit(<span class="string">'resolve'</span>, ...params);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    reject(...params) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span>._status !== <span class="string">'pending'</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.emit(<span class="string">'reject'</span>, ...params);</span><br><span class="line">    &#125;</span><br><span class="line">    then(callback) &#123;</span><br><span class="line">        <span class="keyword">this</span>.on(<span class="string">'resolve'</span>, callback);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span> (callback) &#123;</span><br><span class="line">        <span class="keyword">this</span>.on(<span class="string">'reject'</span>, callback);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//demo</span></span><br><span class="line"><span class="keyword">let</span> promise = <span class="keyword">new</span> myPromise(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">1</span>);</span><br><span class="line">    resolve(<span class="number">11</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -434,7 +436,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -444,10 +446,8 @@
       
 
       <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avator.jpg"
-               alt="WenLie Fan" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avator.jpg" alt="WenLie Fan">
           <p class="site-author-name" itemprop="name">WenLie Fan</p>
           <p class="site-description motion-element" itemprop="description">前端学习笔记</p>
         </div>
@@ -516,10 +516,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

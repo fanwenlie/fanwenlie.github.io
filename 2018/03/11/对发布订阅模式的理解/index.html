@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -59,21 +59,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="设计模式," />
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="设计模式,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2">
 
 
 
@@ -112,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/11/对发布订阅模式的理解/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/11/对发布订阅模式的理解/">
 
 
   <title> 对发布订阅模式的理解 | 樊文烈的博客 </title>
 </head>
 
-<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="//schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -139,12 +139,12 @@
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">樊文烈的博客</span>
       <span class="logo-line-after"><i></i></span>
@@ -171,7 +171,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -181,7 +181,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -191,7 +191,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -201,7 +201,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -234,7 +234,7 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
 
     
       <header class="post-header">
@@ -263,14 +263,14 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
                   <a href="/categories/设计模式/" itemprop="url" rel="index">
                     <span itemprop="name">设计模式</span>
                   </a>
@@ -329,7 +329,7 @@
 <blockquote>
 <p>2018.04.23: 突然发现这个方法有点问题。once方法和off方法需要一点修改</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> </span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>()&#123;</div><div class="line">    <span class="keyword">this</span>._event = &#123;&#125; <span class="comment">//用一个对象来当容器</span></div><div class="line">  &#125;</div><div class="line"></div><div class="line">  on(type, callback)&#123;</div><div class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>._event[type]) &#123;</div><div class="line">      <span class="keyword">this</span>._event[type] = [];</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">this</span>._event[type].push(callback);</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  emit(type, ...params)&#123;</div><div class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>._event[type]) &#123; <span class="keyword">return</span>; &#125;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>._event[type].forEach(<span class="function"><span class="params">fn</span> =&gt;</span> &#123;</div><div class="line">      fn.apply(<span class="keyword">this</span>, params);</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  off(type, callback)&#123;</div><div class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>._event[type]) &#123; <span class="keyword">return</span>; &#125;</div><div class="line">    <span class="keyword">this</span>._event[type].filter(<span class="function"><span class="params">cb</span> =&gt;</span> &#123;</div><div class="line">      <span class="comment">// cb.fn !== callback 用来识别once方法中的off</span></div><div class="line">      <span class="keyword">return</span> cb !== callback || cb.fn !== callback;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  once(type, callback) &#123;</div><div class="line">    <span class="keyword">const</span> tempFn = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">      callback.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</div><div class="line">      <span class="keyword">this</span>.off(type, callback);</div><div class="line">    &#125;; </div><div class="line">    <span class="comment">// 由于on方法绑定的是tempFn, off的时候肯定满足不了fn===callback的判定</span></div><div class="line">    <span class="comment">// 所以需要再tempFn上添加一个属性来标识要off的函数</span></div><div class="line">    tempFn.fn = callback;</div><div class="line">    <span class="keyword">this</span>.on(type, tempFn);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">let</span> evt = <span class="keyword">new</span> Event();</div><div class="line"></div><div class="line">evt.on(<span class="string">'self'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">evt.once(<span class="string">'self'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>, data)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  evt.emit(<span class="string">'self'</span>, <span class="number">222</span>)</div><div class="line"></div><div class="line">  evt.emit(<span class="string">'self'</span>, <span class="number">333</span>)</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Event</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">constructor</span>()&#123;</span><br><span class="line">    <span class="keyword">this</span>._event = &#123;&#125; <span class="comment">//用一个对象来当容器</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  on(type, callback)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>._event[type]) &#123;</span><br><span class="line">      <span class="keyword">this</span>._event[type] = [];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>._event[type].push(callback);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  emit(type, ...params)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>._event[type]) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>._event[type].forEach(<span class="function"><span class="params">fn</span> =&gt;</span> &#123;</span><br><span class="line">      fn.apply(<span class="keyword">this</span>, params);</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  off(type, callback)&#123;</span><br><span class="line">    <span class="keyword">if</span>(!<span class="keyword">this</span>._event[type]) &#123; <span class="keyword">return</span>; &#125;</span><br><span class="line">    <span class="keyword">this</span>._event[type].filter(<span class="function"><span class="params">cb</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="comment">// cb.fn !== callback 用来识别once方法中的off</span></span><br><span class="line">      <span class="keyword">return</span> cb !== callback || cb.fn !== callback;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  once(type, callback) &#123;</span><br><span class="line">    <span class="keyword">const</span> tempFn = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      callback.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">      <span class="keyword">this</span>.off(type, callback);</span><br><span class="line">    &#125;; </span><br><span class="line">    <span class="comment">// 由于on方法绑定的是tempFn, off的时候肯定满足不了fn===callback的判定</span></span><br><span class="line">    <span class="comment">// 所以需要再tempFn上添加一个属性来标识要off的函数</span></span><br><span class="line">    tempFn.fn = callback;</span><br><span class="line">    <span class="keyword">this</span>.on(type, tempFn);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> evt = <span class="keyword">new</span> Event();</span><br><span class="line"></span><br><span class="line">evt.on(<span class="string">'self'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">1</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">evt.once(<span class="string">'self'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>, data)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  evt.emit(<span class="string">'self'</span>, <span class="number">222</span>)</span><br><span class="line"></span><br><span class="line">  evt.emit(<span class="string">'self'</span>, <span class="number">333</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -360,8 +360,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/11/09/iscroll踩坑总结/" rel="next" title="iscroll踩坑总结">
-                <i class="fa fa-chevron-left"></i> iscroll踩坑总结
+              <a href="/2016/11/09/对nodejs的理解/" rel="next" title="对nodejs的理解">
+                <i class="fa fa-chevron-left"></i> 对nodejs的理解
               </a>
             
           </div>
@@ -414,7 +414,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -424,10 +424,8 @@
       
 
       <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avator.jpg"
-               alt="WenLie Fan" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avator.jpg" alt="WenLie Fan">
           <p class="site-author-name" itemprop="name">WenLie Fan</p>
           <p class="site-description motion-element" itemprop="description">前端学习笔记</p>
         </div>
@@ -496,10 +494,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

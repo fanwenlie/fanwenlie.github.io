@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -59,21 +59,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="ES6," />
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="ES6,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2">
 
 
 
@@ -112,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/05/模块化-Import和Export/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/05/模块化-Import和Export/">
 
 
   <title> 模块化-Import和Export | 樊文烈的博客 </title>
 </head>
 
-<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="//schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -139,12 +139,12 @@
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">樊文烈的博客</span>
       <span class="logo-line-after"><i></i></span>
@@ -171,7 +171,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -181,7 +181,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -191,7 +191,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -201,7 +201,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -234,7 +234,7 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
 
     
       <header class="post-header">
@@ -263,14 +263,14 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
                   <a href="/categories/ES6/" itemprop="url" rel="index">
                     <span itemprop="name">ES6</span>
                   </a>
@@ -315,20 +315,20 @@
 <h4 id="2-export"><a href="#2-export" class="headerlink" title="2. export"></a>2. export</h4><blockquote>
 <p>一个模块就是一个独立的文件。该文件内部的所有变量，外部无法获取。如果你希望外部能够读取模块内部的某个变量，就必须使用export关键字输出该变量。</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//mod.js中的代码</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">let</span> name =<span class="string">'fwl'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">let</span> age =<span class="number">22</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">let</span> fn = <span class="function">(<span class="params">a,b</span>)=&gt;</span>a+b</div><div class="line"></div><div class="line"><span class="comment">//上下两种方法都可以</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> name =<span class="string">'fwl'</span>;</div><div class="line"><span class="keyword">let</span> age =<span class="number">22</span>;</div><div class="line"><span class="keyword">let</span> fn = <span class="function">(<span class="params">a,b</span>)=&gt;</span>a+b;</div><div class="line"><span class="keyword">export</span> &#123;name,age,fn&#125;</div><div class="line"><span class="comment">//es6模块功能node不支持，会报错</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//mod.js中的代码</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> name =<span class="string">'fwl'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> age =<span class="number">22</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">let</span> fn = <span class="function">(<span class="params">a,b</span>)=&gt;</span>a+b</span><br><span class="line"></span><br><span class="line"><span class="comment">//上下两种方法都可以</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> name =<span class="string">'fwl'</span>;</span><br><span class="line"><span class="keyword">let</span> age =<span class="number">22</span>;</span><br><span class="line"><span class="keyword">let</span> fn = <span class="function">(<span class="params">a,b</span>)=&gt;</span>a+b;</span><br><span class="line"><span class="keyword">export</span> &#123;name,age,fn&#125;</span><br><span class="line"><span class="comment">//es6模块功能node不支持，会报错</span></span><br></pre></td></tr></table></figure>
 <p>上面两种方法，使用大括号指定说要输出的变量，这种方式优先使用，因为很清晰的看出来输出哪些变量</p>
 <ul>
 <li>export可以输出变量，函数，类。还能用as关键字来重命名。fn重命名了两次，可以用不同的名字输出两次</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">export</span> &#123;</div><div class="line">fn <span class="keyword">as</span> FN</div><div class="line">fn <span class="keyword">as</span> FUN</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123;</span><br><span class="line">fn <span class="keyword">as</span> FN</span><br><span class="line">fn <span class="keyword">as</span> FUN</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>需要特别注意的是，export命令规定的是对外的接口，必须与模块内部的变量建立一一对应关系。</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//报错</span></div><div class="line"><span class="keyword">var</span> m =<span class="number">1</span>;</div><div class="line"><span class="keyword">export</span> m;</div><div class="line"></div><div class="line"><span class="comment">//报错</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="keyword">export</span> fn</div><div class="line"></div><div class="line"><span class="comment">//正确的写法</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> m =<span class="number">1</span>;</div><div class="line">或者</div><div class="line"><span class="keyword">var</span> m=<span class="number">1</span>;</div><div class="line"><span class="keyword">export</span> &#123;m&#125;</div><div class="line"></div><div class="line"><span class="comment">//正确</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line"><span class="keyword">export</span> &#123;fn&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//报错</span></span><br><span class="line"><span class="keyword">var</span> m =<span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> m;</span><br><span class="line"></span><br><span class="line"><span class="comment">//报错</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> fn</span><br><span class="line"></span><br><span class="line"><span class="comment">//正确的写法</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> m =<span class="number">1</span>;</span><br><span class="line">或者</span><br><span class="line"><span class="keyword">var</span> m=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">export</span> &#123;m&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//正确</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>)</span>&#123;&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;fn&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>另外，export语句输出的接口，与其对应的值是动态绑定关系，即通过该接口，可以取到模块内部实时的值</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">var</span> foo = <span class="string">'bar'</span>;</div><div class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> foo = <span class="string">'baz'</span>, <span class="number">500</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">var</span> foo = <span class="string">'bar'</span>;</span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> foo = <span class="string">'baz'</span>, <span class="number">500</span>);</span><br></pre></td></tr></table></figure>
 <p>上面代码输出变量foo，值为bar，500毫秒之后变成baz。</p>
 <p>这一点与CommonJS规范完全不同。CommonJS模块输出的是值的缓存，不存在动态更新</p>
 <ul>
@@ -337,13 +337,13 @@
 <h4 id="3-import"><a href="#3-import" class="headerlink" title="3. import"></a>3. import</h4><blockquote>
 <p>使用export命令定义了模块的对外接口以后，其他JS文件就可以通过import命令加载这个模块（文件）</p>
 </blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//usemod.js中的代码</span></div><div class="line"><span class="keyword">import</span> &#123;name,age,fn&#125; <span class="keyword">from</span> <span class="string">'./mod.js'</span>;</div><div class="line"><span class="built_in">console</span>.log(name,age,fn(<span class="number">1</span>,<span class="number">2</span>));<span class="comment">//fwl 22 3</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//usemod.js中的代码</span></span><br><span class="line"><span class="keyword">import</span> &#123;name,age,fn&#125; <span class="keyword">from</span> <span class="string">'./mod.js'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(name,age,fn(<span class="number">1</span>,<span class="number">2</span>));<span class="comment">//fwl 22 3</span></span><br></pre></td></tr></table></figure>
 <p>如果我们想查看效果，通过以下代码</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">&lt;script src=<span class="string">"https://google.github.io/traceur-compiler/bin/traceur.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script src=<span class="string">"https://google.github.io/traceur-compiler/bin/BrowserSystem.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script src=<span class="string">"https://google.github.io/traceur-compiler/src/bootstrap.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line"></div><div class="line">&lt;!--注意类型是<span class="built_in">module</span>--&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span> <span class="attr">src</span>=<span class="string">"usemod.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://google.github.io/traceur-compiler/bin/traceur.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"https://google.github.io/traceur-compiler/bin/BrowserSystem.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;script src=<span class="string">"https://google.github.io/traceur-compiler/src/bootstrap.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"></span><br><span class="line">&lt;!--注意类型是<span class="built_in">module</span>--&gt;</span><br><span class="line">&lt;script type=<span class="string">"module"</span> src=<span class="string">"usemod.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <h4 id="3-1-我们需要知道：es6中的模块化node是不兼容的，因为node有自己的模块化规范commonJs。"><a href="#3-1-我们需要知道：es6中的模块化node是不兼容的，因为node有自己的模块化规范commonJs。" class="headerlink" title="3.1 我们需要知道：es6中的模块化node是不兼容的，因为node有自己的模块化规范commonJs。"></a>3.1 我们需要知道：es6中的模块化node是不兼容的，因为node有自己的模块化规范commonJs。</h4><p>现在只能通过babel来转码 <code>babel-node插件</code></p>
 <p><code>import &#39;xx&#39; from &#39;react&#39;</code> 等价于 <code>var xx = require(&#39;react&#39;)</code></p>
 <p>import也可以导入css文件，不过要指定目录，不会自动查找。原因可能是因为模块主要针对js文件</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">import &apos;bootstrap/dist/css/bootstrap.min.css&apos;;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import &apos;bootstrap/dist/css/bootstrap.min.css&apos;;</span><br></pre></td></tr></table></figure>
 <h4 id="3-2-import具有提升的效果，有点像var声明的变量提升"><a href="#3-2-import具有提升的效果，有点像var声明的变量提升" class="headerlink" title="3.2 import具有提升的效果，有点像var声明的变量提升"></a>3.2 import具有提升的效果，有点像var声明的变量提升</h4><p>这也意味着你import不管写在哪行，都会在整个模块的头部开始，首先执行</p>
 <h4 id="4-export-default（默认导出）"><a href="#4-export-default（默认导出）" class="headerlink" title="4. export default（默认导出）"></a>4. export default（默认导出）</h4><ul>
 <li><p>使用import命令的时候，用户需要知道所要加载的变量名或函数名，否则无法加载。 为了给用户提供方便，让他们不用阅读文档就能加载模块，就要用到<code>export default</code>命令，为模块指定默认输出 此模块的默认输出是一个函数</p>
@@ -351,12 +351,12 @@
 <li><p>一个js文件只能使用一次export default，也只能导出一个变量，不能像普通export可以导出多个变量</p>
 </li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//mod.js添加以下代码</span></div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'say'</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//mod.js添加以下代码</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'say'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>其他模块加载该模块时，import命令可以为该匿名函数指定任意名字。注意say不用写成{say}</li>
 </ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">import</span> say <span class="keyword">from</span> <span class="string">'./mod.js'</span>;</div></pre></td></tr></table></figure>
-<p>关于更多细节可以看看 阮一峰写的<a href="http://es6.ruanyifeng.com/#docs/module" target="_blank" rel="external">Module模块</a></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> say <span class="keyword">from</span> <span class="string">'./mod.js'</span>;</span><br></pre></td></tr></table></figure>
+<p>关于更多细节可以看看 阮一峰写的<a href="http://es6.ruanyifeng.com/#docs/module" target="_blank" rel="noopener">Module模块</a></p>
 
       
     </div>
@@ -446,7 +446,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -456,10 +456,8 @@
       
 
       <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avator.jpg"
-               alt="WenLie Fan" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avator.jpg" alt="WenLie Fan">
           <p class="site-author-name" itemprop="name">WenLie Fan</p>
           <p class="site-description motion-element" itemprop="description">前端学习笔记</p>
         </div>
@@ -528,10 +526,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

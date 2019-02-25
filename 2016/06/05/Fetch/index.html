@@ -6,15 +6,15 @@
 
 
 <html class="theme-next pisces use-motion">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -29,7 +29,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -59,21 +59,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="AJAX," />
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="AJAX,">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2">
 
 
 
@@ -112,13 +112,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/06/05/Fetch/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/06/05/Fetch/">
 
 
   <title> Fetch | 樊文烈的博客 </title>
 </head>
 
-<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+<body itemscope="" itemtype="//schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -139,12 +139,12 @@
   <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+    <header id="header" class="header" itemscope="" itemtype="//schema.org/WPHeader">
       <div class="header-inner"><div class="site-meta ">
   
 
   <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
+    <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">樊文烈的博客</span>
       <span class="logo-line-after"><i></i></span>
@@ -171,7 +171,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -181,7 +181,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -191,7 +191,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -201,7 +201,7 @@
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
             标签
           </a>
@@ -234,7 +234,7 @@
   
   
 
-  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+  <article class="post post-type-normal " itemscope="" itemtype="//schema.org/Article">
 
     
       <header class="post-header">
@@ -263,14 +263,14 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
               &nbsp; | &nbsp;
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <span itemprop="about" itemscope="" itemtype="https://schema.org/Thing">
                   <a href="/categories/AJAX/" itemprop="url" rel="index">
                     <span itemprop="name">AJAX</span>
                   </a>
@@ -309,15 +309,15 @@
 </blockquote>
 <a id="more"></a>
 <h4 id="1-Fetch介绍"><a href="#1-Fetch介绍" class="headerlink" title="1. Fetch介绍"></a>1. Fetch介绍</h4><p>Fetch API提供了一个fetch()方法，它被定义在BOM的window对象中，你可以用它来发起对远程资源的请求。 该方法返回的是一个Promise对象，让你能够对请求的返回结果进行检索。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="comment">//创建一个简单请求</span></div><div class="line"><span class="comment">//第一个参数url，第二个是配置对象，比如请求方式等  cache是指定缓存还是不缓存响应结果</span></div><div class="line"><span class="keyword">var</span> req = <span class="keyword">new</span> Request(<span class="string">'http://localhost:8000/fetch'</span>, &#123;<span class="attr">method</span>: <span class="string">'get'</span>,<span class="attr">cache</span>:<span class="string">'reload'</span>&#125;);</div><div class="line">fetch(req).then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</div><div class="line">        response.json().then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(result);</div><div class="line">        &#125;);</div><div class="line">&#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(err);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//创建一个简单请求</span></span><br><span class="line"><span class="comment">//第一个参数url，第二个是配置对象，比如请求方式等  cache是指定缓存还是不缓存响应结果</span></span><br><span class="line"><span class="keyword">var</span> req = <span class="keyword">new</span> Request(<span class="string">'http://localhost:8000/fetch'</span>, &#123;<span class="attr">method</span>: <span class="string">'get'</span>,<span class="attr">cache</span>:<span class="string">'reload'</span>&#125;);</span><br><span class="line">fetch(req).then(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">        response.json().then(<span class="function"><span class="keyword">function</span> (<span class="params">result</span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(result);</span><br><span class="line">        &#125;);</span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>上面代码请求成功返回一个Response对象，可以<code>console.log(response)</code>看看具体信息。</p>
 <h5 id="1-1-Body参数"><a href="#1-1-Body参数" class="headerlink" title="1.1 Body参数"></a>1.1 Body参数</h5><p>因为在 Request 和 Response 中都包含 Body 的实现，所以包含以下类型：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="built_in">ArrayBuffer</span></div><div class="line">ArrayBufferView (<span class="built_in">Uint8Array</span> and friends)</div><div class="line">Blob/File  Blob是二进制大对象</div><div class="line">string</div><div class="line">URLSearchParams</div><div class="line">FormData</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ArrayBuffer</span></span><br><span class="line">ArrayBufferView (<span class="built_in">Uint8Array</span> and friends)</span><br><span class="line">Blob/File  Blob是二进制大对象</span><br><span class="line">string</span><br><span class="line">URLSearchParams</span><br><span class="line">FormData</span><br></pre></td></tr></table></figure>
 <p>在 fetch 中实现了对应的方法，并返回的都是 Promise 类型。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><div class="line">arrayBuffer()</div><div class="line">blob()</div><div class="line">json()</div><div class="line">text()</div><div class="line">formData()</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">arrayBuffer()</span><br><span class="line">blob()</span><br><span class="line">json()</span><br><span class="line">text()</span><br><span class="line">formData()</span><br></pre></td></tr></table></figure>
 <p>这样处理返回的数据类型就会变的特别地方便，如处理 json 格式的数据。</p>
-<h5 id="1-2-请求头headers"><a href="#1-2-请求头headers" class="headerlink" title="1.2 请求头headers"></a>1.2 请求头headers</h5><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-<p><a href="http://www.tuicool.com/articles/M7NRr27" target="_blank" rel="external">Fetch参考文档</a></p>
+<h5 id="1-2-请求头headers"><a href="#1-2-请求头headers" class="headerlink" title="1.2 请求头headers"></a>1.2 请求头headers</h5><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><a href="http://www.tuicool.com/articles/M7NRr27" target="_blank" rel="noopener">Fetch参考文档</a></p>
 
       
     </div>
@@ -407,7 +407,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -417,10 +417,8 @@
       
 
       <section class="site-overview sidebar-panel ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avator.jpg"
-               alt="WenLie Fan" />
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avator.jpg" alt="WenLie Fan">
           <p class="site-author-name" itemprop="name">WenLie Fan</p>
           <p class="site-description motion-element" itemprop="description">前端学习笔记</p>
         </div>
@@ -489,10 +487,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
